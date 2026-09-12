@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>How we calculate charging costs | WattCost</title>
-<meta name="description" content="The exact formula behind the WattCost calculator, our data sources, and what the estimate does not include."/>
+<title>How we calculate | Volt & Ledger</title>
+<meta name="description" content="The exact formulas behind both calculators, every data source, and what each estimate leaves out."/>
+<meta property="og:title" content="How we calculate | Volt & Ledger"/>
+<meta property="og:description" content="The exact formulas behind both calculators, every data source, and what each estimate leaves out."/>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet"/>
@@ -15,11 +17,12 @@
 <header class="site">
   <div class="site-inner">
     <div class="brand-wrap">
-      <a class="brand" href="index.html">Watt<span>Cost</span></a>
-      <span class="tag">Real numbers for EVs and home energy</span>
+      <a class="brand" href="index.html">Volt <span>&amp;</span> Ledger</a>
+      <span class="tag">What an EV really costs, in dollars and carbon</span>
     </div>
     <nav class="site-nav" aria-label="Main">
-      <a href="index.html">Calculator</a>
+      <a href="index.html">Charging cost</a>
+      <a href="carbon.html">Carbon payback</a>
       <a href="how-we-calculate.html" aria-current="page">How we calculate</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
@@ -32,9 +35,9 @@
 <main id="main" class="article">
   <h1>How we calculate</h1>
 
-<p class="lede">Every number on this site comes from a published government source. Here's the formula, the sources, and what the estimate leaves out.</p>
+<p class="lede">Every number on this site comes from a published source. Here are the formulas, the sources, and what each estimate leaves out.</p>
 
-<h2>The formula</h2>
+<h2 id="cost">The charging cost calculator</h2>
 <p class="formula">monthly cost = miles per month &times; (EPA kWh per 100 miles &divide; 100) &times; your electricity rate</p>
 <p>For example: 1,000 miles a month in a car rated 32 kWh per 100 miles, at 18 cents per kWh, is 1,000 &times; 0.32 &times; $0.18 = <strong>$57.60</strong>.</p>
 <p>The gas comparison is the same idea: miles &divide; mpg &times; price per gallon.</p>
@@ -58,8 +61,36 @@
   <li><strong>Fees and taxes</strong> beyond what's already in the EIA average, and any EV registration surcharge your state charges.</li>
 </ul>
 
+
+<h2 id="carbon">The carbon payback calculator</h2>
+<p class="formula">payback miles = battery footprint (g) &divide; (gas CO2 per mile &minus; EV CO2e per mile)</p>
+<p>The battery footprint is battery size (kWh) &times; a production factor (kg CO2e per kWh). The EV's per-mile figure is its EPA efficiency (kWh per 100 miles) &times; the emissions of the electricity it charges from. The gas car's figure is 8,887 g CO2 per gallon &divide; its mpg.</p>
+
+<h3>Manufacturing: a range, not one number</h3>
+<p>There is no official per-model figure for the carbon cost of building an EV. We use the ICCT's July 2025 table of battery production emissions, itself built on Argonne National Laboratory's GREET 2024 model. It varies by chemistry and by where the cells were made: 52 to 80 kg CO2e per kWh across LFP, NMC 622 and NMC 811 cells from Europe, the United States, South Korea, Japan and China. You choose what you know. If you know nothing about your battery, we use 72.8 kg CO2e per kWh, the ICCT's sales-weighted figure for NMC 622 batteries in cars sold in the EU in 2024, and say so on the page. Other published estimates run from 37 to 115 kg CO2e per kWh, and the harmonized review by Peiseler et al. gives a median of 74 for NMC 811. Move the number if you have a better one; the payback result scales with it.</p>
+<p>We treat the battery as the whole of the EV's extra manufacturing footprint and assume the rest of the vehicle costs roughly what a gas car does to build. The ICCT estimates BEV production emissions are about 40% higher than a gas car's, with the battery as the reason.</p>
+<p>Battery size isn't in EPA's data. We estimate it as EPA range &times; EPA efficiency, the energy drawn from the wall to cover the rated range. Because that includes charging losses, the estimate usually overstates the pack by roughly 10 to 15% (for example, it gives 99 kWh for a 2026 Equinox EV FWD, whose maker lists 85), so the payback miles shown are conservative. Enter your real battery size if you know it.</p>
+
+<h3>Electricity: your state, or a specific source</h3>
+<p>For grid charging we use EPA eGRID2023's CO2e output rate for electricity generated in your state, then add eGRID's 4.2% grid loss so the figure reflects delivered electricity. These rates cover emissions at the power plant. They describe generation within the state, not imports, so states that buy a lot of power from neighbors are approximated. EPA's own <a href="https://www.epa.gov/egrid/power-profiler" rel="noopener">Power Profiler</a> gives a ZIP-code figure if you want one.</p>
+<p>If you choose a specific source (solar, wind, nuclear, hydro, geothermal, gas, coal), we use the IPCC's lifecycle median for that source. Lifecycle figures include building the plant and supplying its fuel, which the grid figure does not, so the source options count a little more than a grid figure built the same way would. Rooftop solar gets no grid-loss adjustment; every other source does.</p>
+
+<h3>Gasoline: tailpipe only</h3>
+<p>We use EPA's 8,887 g CO2 per gallon, which matches the tailpipe figures on EPA's own vehicle labels. We do not add emissions from extracting, refining and delivering the fuel. That omission favors the gas car, so the payback miles shown are, if anything, slightly too high.</p>
+
+<h3>Trees: an illustration, not an offset</h3>
+<p>EPA's equivalencies calculator says a medium-growth urban tree seedling absorbs about 60 kg of CO2 over its first 10 years. We divide the annual saving by that figure. The point is scale, not accounting: the EV's saving happens this year, while a seedling takes a decade to absorb the same amount, and only if it survives. Don't read the tree number as something you've offset.</p>
+
+<h3>What the payback estimate does not include</h3>
+<ul>
+  <li>Battery replacement, recycling credits, or end-of-life treatment for either vehicle.</li>
+  <li>The grid getting cleaner over time, which shortens a real payback.</li>
+  <li>Cold weather and highway speeds, which raise real-world EV consumption above the EPA rating.</li>
+  <li>Tire and brake wear, maintenance, or anything other than CO2-equivalent greenhouse gases.</li>
+</ul>
+
 <h2>How often we update</h2>
-<p>Monthly. EIA publishes new state electricity prices near the end of each month, and we refresh the EPA vehicle list at the same time. Every figure on the calculator shows the date of the data it came from, so you can judge for yourself whether it's current.</p>
+<p>Monthly for prices and vehicles. EIA publishes new state electricity prices near the end of each month, and we refresh the EPA vehicle list at the same time. Every figure on the calculators shows the date of the data it came from. eGRID is annual (EPA released 2023 data in 2025) and the battery and IPCC factors change only when the underlying studies do.</p>
 
 <h2>Found an error?</h2>
 <p>Tell us which figure and which source, and we'll check it. <a href="contact.html">Contact us</a>.</p>
@@ -67,7 +98,7 @@
 <footer class="site">
   <div class="foot-inner">
     <div><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="affiliate-disclosure.html">Affiliate disclosure</a><a href="how-we-calculate.html">How we calculate</a></div>
-    <div>&copy; 2026 WattCost. Estimates only; your utility bill is the final word.</div>
+    <div>&copy; 2026 Volt & Ledger. Estimates only; your utility bill is the final word.</div>
   </div>
 </footer>
 <script>

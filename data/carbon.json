@@ -1,0 +1,338 @@
+{
+  "updated": "2026-09-12",
+  "grid": {
+    "source": "U.S. EPA, eGRID2023 Summary Tables (Rev 2, released June 12, 2025), Table 3: State Output Emission Rates, CO2e column",
+    "source_url": "https://www.epa.gov/egrid/summary-data",
+    "unit": "lb CO2e per MWh generated in the state",
+    "note": "These are emissions per MWh of electricity generated within each state, not necessarily consumed there. Imported power is not reflected. Rates cover emissions at the power plant only (not plant construction or fuel extraction).",
+    "grid_gross_loss_pct": 4.2,
+    "grid_loss_source": "eGRID2023 Summary Tables, Table 1, Grid Gross Loss column (4.1 to 4.4% by subregion; U.S. 4.2%)",
+    "us_average": 770.9,
+    "states": {
+      "AL": {
+        "name": "Alabama",
+        "lb_co2e_per_mwh": 714.0
+      },
+      "AK": {
+        "name": "Alaska",
+        "lb_co2e_per_mwh": 814.5
+      },
+      "AZ": {
+        "name": "Arizona",
+        "lb_co2e_per_mwh": 689.1
+      },
+      "AR": {
+        "name": "Arkansas",
+        "lb_co2e_per_mwh": 998.4
+      },
+      "CA": {
+        "name": "California",
+        "lb_co2e_per_mwh": 394.8
+      },
+      "CO": {
+        "name": "Colorado",
+        "lb_co2e_per_mwh": 1091.1
+      },
+      "CT": {
+        "name": "Connecticut",
+        "lb_co2e_per_mwh": 540.7
+      },
+      "DE": {
+        "name": "Delaware",
+        "lb_co2e_per_mwh": 704.2
+      },
+      "DC": {
+        "name": "District of Columbia",
+        "lb_co2e_per_mwh": 395.0
+      },
+      "FL": {
+        "name": "Florida",
+        "lb_co2e_per_mwh": 789.1
+      },
+      "GA": {
+        "name": "Georgia",
+        "lb_co2e_per_mwh": 717.4
+      },
+      "HI": {
+        "name": "Hawaii",
+        "lb_co2e_per_mwh": 1394.7
+      },
+      "ID": {
+        "name": "Idaho",
+        "lb_co2e_per_mwh": 313.9
+      },
+      "IL": {
+        "name": "Illinois",
+        "lb_co2e_per_mwh": 474.4
+      },
+      "IN": {
+        "name": "Indiana",
+        "lb_co2e_per_mwh": 1465.5
+      },
+      "IA": {
+        "name": "Iowa",
+        "lb_co2e_per_mwh": 634.2
+      },
+      "KS": {
+        "name": "Kansas",
+        "lb_co2e_per_mwh": 733.3
+      },
+      "KY": {
+        "name": "Kentucky",
+        "lb_co2e_per_mwh": 1747.0
+      },
+      "LA": {
+        "name": "Louisiana",
+        "lb_co2e_per_mwh": 763.1
+      },
+      "ME": {
+        "name": "Maine",
+        "lb_co2e_per_mwh": 316.8
+      },
+      "MD": {
+        "name": "Maryland",
+        "lb_co2e_per_mwh": 522.2
+      },
+      "MA": {
+        "name": "Massachusetts",
+        "lb_co2e_per_mwh": 830.1
+      },
+      "MI": {
+        "name": "Michigan",
+        "lb_co2e_per_mwh": 797.4
+      },
+      "MN": {
+        "name": "Minnesota",
+        "lb_co2e_per_mwh": 752.3
+      },
+      "MS": {
+        "name": "Mississippi",
+        "lb_co2e_per_mwh": 828.3
+      },
+      "MO": {
+        "name": "Missouri",
+        "lb_co2e_per_mwh": 1454.6
+      },
+      "MT": {
+        "name": "Montana",
+        "lb_co2e_per_mwh": 1063.9
+      },
+      "NE": {
+        "name": "Nebraska",
+        "lb_co2e_per_mwh": 1025.8
+      },
+      "NV": {
+        "name": "Nevada",
+        "lb_co2e_per_mwh": 643.9
+      },
+      "NH": {
+        "name": "New Hampshire",
+        "lb_co2e_per_mwh": 276.2
+      },
+      "NJ": {
+        "name": "New Jersey",
+        "lb_co2e_per_mwh": 470.2
+      },
+      "NM": {
+        "name": "New Mexico",
+        "lb_co2e_per_mwh": 773.6
+      },
+      "NY": {
+        "name": "New York",
+        "lb_co2e_per_mwh": 466.6
+      },
+      "NC": {
+        "name": "North Carolina",
+        "lb_co2e_per_mwh": 626.4
+      },
+      "ND": {
+        "name": "North Dakota",
+        "lb_co2e_per_mwh": 1297.9
+      },
+      "OH": {
+        "name": "Ohio",
+        "lb_co2e_per_mwh": 1068.3
+      },
+      "OK": {
+        "name": "Oklahoma",
+        "lb_co2e_per_mwh": 648.8
+      },
+      "OR": {
+        "name": "Oregon",
+        "lb_co2e_per_mwh": 365.0
+      },
+      "PA": {
+        "name": "Pennsylvania",
+        "lb_co2e_per_mwh": 647.9
+      },
+      "RI": {
+        "name": "Rhode Island",
+        "lb_co2e_per_mwh": 840.0
+      },
+      "SC": {
+        "name": "South Carolina",
+        "lb_co2e_per_mwh": 560.4
+      },
+      "SD": {
+        "name": "South Dakota",
+        "lb_co2e_per_mwh": 335.6
+      },
+      "TN": {
+        "name": "Tennessee",
+        "lb_co2e_per_mwh": 661.2
+      },
+      "TX": {
+        "name": "Texas",
+        "lb_co2e_per_mwh": 771.2
+      },
+      "UT": {
+        "name": "Utah",
+        "lb_co2e_per_mwh": 1421.2
+      },
+      "VT": {
+        "name": "Vermont",
+        "lb_co2e_per_mwh": 52.2
+      },
+      "VA": {
+        "name": "Virginia",
+        "lb_co2e_per_mwh": 539.6
+      },
+      "WA": {
+        "name": "Washington",
+        "lb_co2e_per_mwh": 266.6
+      },
+      "WV": {
+        "name": "West Virginia",
+        "lb_co2e_per_mwh": 1968.9
+      },
+      "WI": {
+        "name": "Wisconsin",
+        "lb_co2e_per_mwh": 1163.6
+      },
+      "WY": {
+        "name": "Wyoming",
+        "lb_co2e_per_mwh": 1833.3
+      }
+    }
+  },
+  "sources": {
+    "source": "IPCC Fifth Assessment Report (2014), Working Group III, Annex III, Table A.III.2, lifecycle median values",
+    "source_url": "https://www.ipcc.ch/site/assets/uploads/2018/02/ipcc_wg3_ar5_annex-iii.pdf",
+    "unit": "g CO2e per kWh, full lifecycle (includes plant construction and fuel supply chain)",
+    "note": "Lifecycle values include construction and fuel supply; the state grid figures cover the power plant only. Choosing a specific source therefore counts slightly more than a grid figure built the same way would.",
+    "options": [
+      {
+        "id": "solar",
+        "label": "Solar (photovoltaic)",
+        "g_per_kwh": 48,
+        "range": "18 to 180"
+      },
+      {
+        "id": "wind",
+        "label": "Wind",
+        "g_per_kwh": 11.5,
+        "range": "7 to 56",
+        "note": "IPCC lists onshore (11) and offshore (12) separately; 11.5 is their average."
+      },
+      {
+        "id": "nuclear",
+        "label": "Nuclear",
+        "g_per_kwh": 12,
+        "range": "3.7 to 110"
+      },
+      {
+        "id": "hydro",
+        "label": "Hydropower",
+        "g_per_kwh": 24,
+        "range": "1 to 2,200"
+      },
+      {
+        "id": "geothermal",
+        "label": "Geothermal",
+        "g_per_kwh": 38,
+        "range": "6 to 79"
+      },
+      {
+        "id": "gas",
+        "label": "Natural gas",
+        "g_per_kwh": 490,
+        "range": "410 to 650"
+      },
+      {
+        "id": "coal",
+        "label": "Coal",
+        "g_per_kwh": 820,
+        "range": "740 to 910"
+      }
+    ]
+  },
+  "battery": {
+    "source": "ICCT, Life-cycle greenhouse gas emissions from passenger cars in the European Union: A 2025 update (July 2025), Table 2, based on Argonne National Laboratory's R&D GREET 2024 model with regional supply-chain adjustments",
+    "source_url": "https://theicct.org/publication/electric-cars-life-cycle-analysis-emissions-europe-jul25/",
+    "unit": "kg CO2e per kWh of battery capacity, production including raw materials",
+    "chemistries": [
+      "LFP",
+      "NMC622",
+      "NMC811"
+    ],
+    "regions": [
+      "Europe",
+      "United States",
+      "South Korea",
+      "Japan",
+      "China"
+    ],
+    "kg_per_kwh": {
+      "LFP": {
+        "Europe": 52,
+        "United States": 57,
+        "South Korea": 63,
+        "Japan": 66,
+        "China": 69
+      },
+      "NMC622": {
+        "Europe": 60,
+        "United States": 64,
+        "South Korea": 73,
+        "Japan": 75,
+        "China": 80
+      },
+      "NMC811": {
+        "Europe": 59,
+        "United States": 64,
+        "South Korea": 72,
+        "Japan": 75,
+        "China": 79
+      }
+    },
+    "not_sure_default": 72.8,
+    "not_sure_note": "ICCT's sales-weighted figure for NMC622 batteries in cars sold in the EU in 2024 (72.8 kg CO2e/kWh). Used when you don't know your battery's chemistry or where its cells were made.",
+    "other_estimates": [
+      {
+        "label": "Peiseler et al., harmonized literature review, NMC811",
+        "value": "median 74, 5th to 95th percentile 59 to 115 kg CO2e/kWh"
+      },
+      {
+        "label": "Faraday Institution (2021), citing ICCT/GREET",
+        "value": "55 kg CO2e/kWh"
+      },
+      {
+        "label": "IVL (2017 review of earlier studies)",
+        "value": "37 to 87 kg CO2e/kWh"
+      }
+    ],
+    "assumption": "We treat the battery as the EV's extra manufacturing footprint and assume the rest of the vehicle has production emissions comparable to a gas car. ICCT (2025) estimates BEV production emissions are about 40% higher than a gasoline car's, attributing the difference to the battery."
+  },
+  "gasoline": {
+    "source": "U.S. EPA, Greenhouse Gas Equivalencies Calculator, Calculations and References",
+    "source_url": "https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator-calculations-and-references",
+    "g_co2_per_gallon": 8887,
+    "note": "Tailpipe only. Emissions from extracting, refining and transporting gasoline are not included, which favors the gas car. Consistency check: multiplying EPA's tailpipe g/mile by combined mpg across thousands of 2018+ gasoline cars in EPA's vehicle file gives a median of 8,880 g per gallon."
+  },
+  "trees": {
+    "source": "U.S. EPA, Greenhouse Gas Equivalencies Calculator, Calculations and References ('Tree seedlings grown for 10 years')",
+    "source_url": "https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator-calculations-and-references",
+    "kg_co2_per_tree_10_years": 60,
+    "note": "EPA's figure: a medium-growth urban tree seedling sequesters about 0.060 metric tons (60 kg) of CO2 over its first 10 years. This is an illustration of scale, not an offset: the CO2 is avoided now, while a tree absorbs it gradually over a decade."
+  }
+}

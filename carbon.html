@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>EV Carbon Payback Calculator | Volt & Ledger</title>
+<meta name="description" content="How many miles until an EV repays the carbon cost of its battery? Uses EPA eGRID grid data by state, IPCC lifecycle factors, and ICCT battery studies."/>
+<meta property="og:title" content="EV Carbon Payback Calculator | Volt & Ledger"/>
+<meta property="og:description" content="How many miles until an EV repays the carbon cost of its battery? Uses EPA eGRID grid data by state, IPCC lifecycle factors, and ICCT battery studies."/>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/site.css"/>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="site-inner">
+    <div class="brand-wrap">
+      <a class="brand" href="index.html">Volt <span>&amp;</span> Ledger</a>
+      <span class="tag">What an EV really costs, in dollars and carbon</span>
+    </div>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html">Charging cost</a>
+      <a href="carbon.html" aria-current="page">Carbon payback</a>
+      <a href="how-we-calculate.html">How we calculate</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<div class="disclosure-bar">
+  <p><strong>Affiliate disclosure:</strong> some links on this site earn us a commission if you buy, at no extra cost to you. Commissions never change our math or our picks. <a href="affiliate-disclosure.html">How we make money</a></p>
+</div>
+
+<main id="main">
+  <h1>When does an EV pay back its manufacturing carbon?</h1>
+  <p class="sub">An EV starts with a bigger carbon footprint because of its battery, then emits less every mile. This calculator estimates the mile where the two lines cross, using EPA grid data, IPCC lifecycle factors, and published battery studies. Every number shows its source. Nothing you enter is saved.</p>
+
+  <div class="notice" id="loadError" role="alert">
+    <strong>The data files didn't load.</strong> If you opened this file by double-clicking it, that's expected. Run <code>python3 -m http.server --bind 127.0.0.1</code> in the site folder and visit <code>http://127.0.0.1:8000/carbon.html</code>, or view it on the live site.
+  </div>
+
+  <div class="calc-grid">
+    <div class="panel">
+      <h2>Your numbers</h2>
+      <fieldset class="field ev-pick">
+        <legend>Your EV</legend>
+        <div class="ev-row">
+          <div><label for="year" class="mini">Year</label><select id="year" disabled><option>Loading…</option></select></div>
+          <div><label for="make" class="mini">Make</label><select id="make" disabled></select></div>
+        </div>
+        <label for="model" class="mini">Model and trim</label>
+        <select id="model" disabled></select>
+        <div class="source-line" id="vehicleLine"></div>
+      </fieldset>
+
+      <div class="field">
+        <label for="battery">Battery size <span class="hint">(kWh)</span></label>
+        <input id="battery" type="number" step="1" min="5" max="300" inputmode="numeric">
+        <div class="source-line" id="batteryLine">Pick a car first.</div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="chem">Battery chemistry</label>
+          <select id="chem">
+            <option value="">Not sure</option>
+            <option value="LFP">LFP (lithium iron phosphate)</option>
+            <option value="NMC622">NMC 622</option>
+            <option value="NMC811">NMC 811</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="origin">Where the cells were made</label>
+          <select id="origin" disabled>
+            <option value="">Not sure</option>
+          </select>
+        </div>
+      </div>
+      <div class="source-line" id="batteryFactorLine"></div>
+
+      <div class="field">
+        <label for="source">Where your charging electricity comes from</label>
+        <select id="source">
+          <option value="grid">My state's grid average</option>
+        </select>
+      </div>
+      <div class="field" id="stateWrap">
+        <label for="state">Your state</label>
+        <select id="state" disabled><option>Loading…</option></select>
+        <div class="source-line" id="gridLine"></div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="mpg">Gas car to compare <span class="hint">(mpg)</span></label>
+          <input id="mpg" type="number" step="1" min="1" max="100" value="25" inputmode="numeric">
+        </div>
+        <div class="field">
+          <label for="miles">Miles per year</label>
+          <input id="miles" type="number" step="500" min="0" max="100000" value="12000" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+
+    <div class="result" aria-live="polite">
+      <h2>Carbon payback</h2>
+      <div class="big num"><span id="payback">–</span><small> miles</small></div>
+      <div class="per num" id="paybackYears">Choose your EV to see the result</div>
+      <div class="compare">
+        <div class="row"><span>Battery manufacturing footprint</span><b class="num" id="mfg">–</b></div>
+        <div class="row"><span>EV, per mile driven</span><b class="num" id="evMile">–</b></div>
+        <div class="row"><span>Gas car, per mile driven</span><b class="num" id="gasMile">–</b></div>
+        <div class="row"><span>Saved per year, after payback</span><b class="num" id="yearly">–</b></div>
+        <div class="save num" id="treeLine">–</div>
+      </div>
+      <p class="method">Payback miles = battery footprint &divide; (gas CO2 per mile &minus; EV CO2 per mile). Gas side is tailpipe only, which favors the gas car. Tree figure uses EPA's 10-year seedling equivalence and is a scale illustration, not an offset. <a href="how-we-calculate.html#carbon" style="color:var(--result-ink)">Full method and sources</a></p>
+    </div>
+  </div>
+
+  <section class="sources">
+    <h2>Where these numbers come from</h2>
+    <ul class="src-list" id="sourceList"><li>Loading sources…</li></ul>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="foot-inner">
+    <div><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="affiliate-disclosure.html">Affiliate disclosure</a><a href="how-we-calculate.html">How we calculate</a></div>
+    <div>&copy; 2026 Volt & Ledger. Estimates only; your utility bill is the final word.</div>
+  </div>
+</footer>
+<script>
+(function () {
+  var D = {};
+  var el = function (id) { return document.getElementById(id); };
+  var fmt = function (n, dp) { return n.toLocaleString('en-US', { maximumFractionDigits: dp || 0 }); };
+  var LB_TO_G = 453.59237;
+
+  function load(name) {
+    return fetch('data/' + name + '.json', { cache: 'no-cache' }).then(function (r) {
+      if (!r.ok) throw new Error(name + '.json returned ' + r.status);
+      return r.json();
+    });
+  }
+
+  Promise.all([load('evs'), load('carbon')]).then(function (res) {
+    D.evs = res[0]; D.c = res[1];
+    buildYearMenu(); buildStateMenu(); buildSourceMenu(); buildOriginMenu(); buildSources();
+    el('year').disabled = false; el('state').disabled = false;
+    onSource(); onBatteryFactor();
+  }).catch(function (err) {
+    console.error(err);
+    el('loadError').classList.add('show');
+    el('year').innerHTML = '<option>Data unavailable</option>';
+  });
+
+  function uniq(arr) { return arr.filter(function (x, i) { return arr.indexOf(x) === i; }); }
+  function fill(sel, prompt, items) {
+    sel.innerHTML = '';
+    var o = document.createElement('option'); o.value = ''; o.textContent = prompt; sel.appendChild(o);
+    items.forEach(function (it) {
+      var opt = document.createElement('option'); opt.value = it.value; opt.textContent = it.label; sel.appendChild(opt);
+    });
+  }
+  function lock(sel, prompt) { fill(sel, prompt, []); sel.disabled = true; }
+
+  function buildYearMenu() {
+    var years = uniq(D.evs.vehicles.map(function (v) { return v.year; })).sort(function (a, b) { return b - a; });
+    fill(el('year'), 'Choose year', years.map(function (y) { return { value: y, label: y }; }));
+    lock(el('make'), 'Choose a year first'); lock(el('model'), 'Choose a make first');
+  }
+  function onYear() {
+    var y = +el('year').value;
+    if (!y) { lock(el('make'), 'Choose a year first'); lock(el('model'), 'Choose a make first'); onVehicle(); return; }
+    var keep = el('make').value;
+    var makes = uniq(D.evs.vehicles.filter(function (v) { return v.year === y; }).map(function (v) { return v.make; })).sort(function (a, b) { return a.localeCompare(b); });
+    fill(el('make'), 'Choose make', makes.map(function (m) { return { value: m, label: m }; }));
+    el('make').disabled = false;
+    if (keep && makes.indexOf(keep) !== -1) el('make').value = keep;
+    onMake();
+  }
+  function onMake() {
+    var y = +el('year').value, mk = el('make').value;
+    if (!mk) { lock(el('model'), 'Choose a make first'); onVehicle(); return; }
+    var models = D.evs.vehicles.filter(function (v) { return v.year === y && v.make === mk; }).sort(function (a, b) { return a.model.localeCompare(b.model); });
+    fill(el('model'), 'Choose model and trim', models.map(function (v) { return { value: v.id, label: v.model }; }));
+    el('model').disabled = false;
+    onVehicle();
+  }
+  function currentVehicle() {
+    var id = el('model').value;
+    return D.evs.vehicles.find(function (v) { return v.id === id; });
+  }
+  function onVehicle() {
+    var v = currentVehicle();
+    if (!v) { el('vehicleLine').textContent = ''; el('battery').value = ''; el('batteryLine').textContent = 'Pick a car first.'; calc(); return; }
+    el('vehicleLine').textContent = 'EPA: ' + Math.round(v.kwh_per_100mi) + ' kWh/100 mi' + (v.range_mi ? ' · ' + v.range_mi + ' mi range' : '');
+    if (v.range_mi) {
+      var est = Math.round(v.range_mi * v.kwh_per_100mi / 100);
+      el('battery').value = est;
+      el('batteryLine').textContent = 'Estimated from EPA range x efficiency (' + v.range_mi + ' mi x ' + Math.round(v.kwh_per_100mi) + ' kWh/100 mi). Because EPA measures energy at the wall, this usually overstates the pack by roughly 10 to 15%, which makes the payback figure conservative. Enter your real battery size if you know it.';
+    } else {
+      el('battery').value = '';
+      el('batteryLine').textContent = 'EPA lists no range for this car, so we can\'t estimate its battery. Enter the size from your spec sheet.';
+    }
+    calc();
+  }
+
+  function buildStateMenu() {
+    var s = D.c.grid.states;
+    fill(el('state'), 'U.S. average', Object.keys(s).map(function (k) { return { value: k, label: s[k].name }; }));
+  }
+  function buildSourceMenu() {
+    var sel = el('source');
+    D.c.sources.options.forEach(function (o) {
+      var opt = document.createElement('option'); opt.value = o.id; opt.textContent = o.label + ' (' + o.g_per_kwh + ' g/kWh)'; sel.appendChild(opt);
+    });
+  }
+  function buildOriginMenu() {
+    var sel = el('origin');
+    D.c.battery.regions.forEach(function (r) {
+      var opt = document.createElement('option'); opt.value = r; opt.textContent = r; sel.appendChild(opt);
+    });
+  }
+  function onSource() {
+    var isGrid = el('source').value === 'grid';
+    el('stateWrap').style.display = isGrid ? 'block' : 'none';
+    if (isGrid) onState(); else calc();
+  }
+  function onState() {
+    var code = el('state').value;
+    var lb = code ? D.c.grid.states[code].lb_co2e_per_mwh : D.c.grid.us_average;
+    el('gridLine').textContent = (code ? D.c.grid.states[code].name : 'U.S.') + ' generation average: ' + fmt(lb, 1) + ' lb CO2e/MWh (EPA eGRID2023), plus ' + D.c.grid.grid_gross_loss_pct + '% grid losses.';
+    calc();
+  }
+
+  function onBatteryFactor() {
+    var chem = el('chem').value;
+    el('origin').disabled = !chem;
+    if (!chem) el('origin').value = '';
+    var f = batteryFactor();
+    el('batteryFactorLine').textContent = f.label;
+    calc();
+  }
+  function batteryFactor() {
+    var chem = el('chem').value, origin = el('origin').value, b = D.c.battery;
+    if (chem && origin) return { kg: b.kg_per_kwh[chem][origin], label: chem + ' cells made in ' + origin + ': ' + b.kg_per_kwh[chem][origin] + ' kg CO2e per kWh (ICCT 2025, Table 2).' };
+    if (chem) {
+      var vals = b.regions.map(function (r) { return b.kg_per_kwh[chem][r]; });
+      var avg = vals.reduce(function (a, x) { return a + x; }, 0) / vals.length;
+      return { kg: avg, label: chem + ', origin unknown: average of ICCT\'s five regions, ' + fmt(avg, 1) + ' kg CO2e per kWh (range ' + Math.min.apply(null, vals) + ' to ' + Math.max.apply(null, vals) + ').' };
+    }
+    return { kg: b.not_sure_default, label: 'Chemistry unknown: ' + b.not_sure_default + ' kg CO2e per kWh. ' + b.not_sure_note };
+  }
+
+  function evGramsPerKwh() {
+    var src = el('source').value;
+    var loss = D.c.grid.grid_gross_loss_pct / 100;
+    if (src === 'grid') {
+      var code = el('state').value;
+      var lb = code ? D.c.grid.states[code].lb_co2e_per_mwh : D.c.grid.us_average;
+      return lb * LB_TO_G / 1000 / (1 - loss);
+    }
+    var o = D.c.sources.options.find(function (x) { return x.id === src; });
+    return src === 'solar' ? o.g_per_kwh : o.g_per_kwh / (1 - loss);
+  }
+
+  function calc() {
+    var v = currentVehicle();
+    var kwh = parseFloat(el('battery').value), mpg = parseFloat(el('mpg').value), miles = parseFloat(el('miles').value);
+    if (!v || !(kwh > 0) || !(mpg > 0)) {
+      ['payback', 'mfg', 'evMile', 'gasMile', 'yearly'].forEach(function (id) { el(id).textContent = '–'; });
+      el('paybackYears').textContent = 'Choose your EV to see the result';
+      el('treeLine').textContent = '–';
+      return;
+    }
+    var mfgKg = kwh * batteryFactor().kg;
+    var evG = v.kwh_per_100mi / 100 * evGramsPerKwh();
+    var gasG = D.c.gasoline.g_co2_per_gallon / mpg;
+    var diff = gasG - evG;
+    el('mfg').textContent = fmt(mfgKg / 1000, 1) + ' t CO2e';
+    el('evMile').textContent = fmt(evG) + ' g CO2e';
+    el('gasMile').textContent = fmt(gasG) + ' g CO2';
+    if (diff <= 0) {
+      el('payback').textContent = 'Never';
+      el('paybackYears').textContent = 'At these settings the EV emits as much per mile as the gas car, so the battery footprint is never repaid.';
+      el('yearly').textContent = '–'; el('treeLine').textContent = 'No annual saving at these settings';
+      return;
+    }
+    var pb = mfgKg * 1000 / diff;
+    el('payback').textContent = fmt(pb);
+    el('paybackYears').textContent = miles > 0 ? 'About ' + fmt(pb / miles, 1) + ' years at ' + fmt(miles) + ' miles a year' : 'Enter miles per year to see the time';
+    var yearlyKg = diff * miles / 1000;
+    el('yearly').textContent = fmt(yearlyKg / 1000, 2) + ' t CO2e';
+    var trees = yearlyKg / D.c.trees.kg_co2_per_tree_10_years;
+    el('treeLine').textContent = 'Each year after payback: what ' + fmt(trees) + ' tree seedlings absorb in 10 years';
+  }
+
+  function buildSources() {
+    var c = D.c;
+    el('sourceList').innerHTML =
+      '<li><strong>Grid emissions:</strong> <a href="' + c.grid.source_url + '" rel="noopener">' + c.grid.source + '</a><br><span class="when">' + c.grid.note + '</span></li>' +
+      '<li><strong>Specific electricity sources:</strong> <a href="' + c.sources.source_url + '" rel="noopener">' + c.sources.source + '</a><br><span class="when">' + c.sources.note + '</span></li>' +
+      '<li><strong>Battery manufacturing:</strong> <a href="' + c.battery.source_url + '" rel="noopener">' + c.battery.source + '</a><br><span class="when">' + c.battery.assumption + '</span></li>' +
+      '<li><strong>EV efficiency:</strong> <a href="' + D.evs.source_url + '" rel="noopener">' + D.evs.source + '</a><br><span class="when">Battery size is estimated from EPA range and efficiency unless you enter it.</span></li>' +
+      '<li><strong>Gasoline:</strong> <a href="' + c.gasoline.source_url + '" rel="noopener">' + c.gasoline.source + '</a>, ' + fmt(c.gasoline.g_co2_per_gallon) + ' g CO2 per gallon<br><span class="when">' + c.gasoline.note + '</span></li>' +
+      '<li><strong>Trees:</strong> <a href="' + c.trees.source_url + '" rel="noopener">' + c.trees.source + '</a><br><span class="when">' + c.trees.note + '</span></li>';
+  }
+
+  el('year').addEventListener('change', onYear);
+  el('make').addEventListener('change', onMake);
+  el('model').addEventListener('change', onVehicle);
+  el('source').addEventListener('change', onSource);
+  el('state').addEventListener('change', onState);
+  el('chem').addEventListener('change', onBatteryFactor);
+  el('origin').addEventListener('change', onBatteryFactor);
+  ['battery', 'mpg', 'miles'].forEach(function (id) { el(id).addEventListener('input', calc); });
+})();
+</script>
+</body>
+</html>
