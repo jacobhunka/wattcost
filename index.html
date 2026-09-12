@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>EV Charging Cost Calculator by State | WattCost</title>
+<meta name="description" content="What does it cost to charge your EV at home? Free calculator using official EPA efficiency ratings and EIA electricity rates for every state."/>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/site.css"/>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="site-inner">
+    <div class="brand-wrap">
+      <a class="brand" href="index.html">Watt<span>Cost</span></a>
+      <span class="tag">Real numbers for EVs and home energy</span>
+    </div>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html" aria-current="page">Calculator</a>
+      <a href="how-we-calculate.html">How we calculate</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<div class="disclosure-bar">
+  <p><strong>Affiliate disclosure:</strong> some links on this site earn us a commission if you buy, at no extra cost to you. Commissions never change our math or our picks. <a href="affiliate-disclosure.html">How we make money</a></p>
+</div>
+<main id="main">
+  <h1>What does charging your EV cost per month?</h1>
+  <p class="sub">Pick your car and state. We use the EPA's official efficiency rating and the EIA's average residential electricity rate, and show the date of every number. Nothing you type is saved or sent anywhere.</p>
+
+  <div class="notice" id="loadError" role="alert">
+    <strong>The data files didn't load.</strong> If you opened this file by double-clicking it, that's expected: browsers block pages opened from your computer from reading other files. It will work once it's on GitHub Pages. To test on your computer, open a terminal in this folder, run <code>python3 -m http.server</code>, then visit <code>http://localhost:8000</code>.
+  </div>
+
+  <div class="calc-grid">
+    <div class="panel">
+      <h2>Your numbers</h2>
+      <fieldset class="field ev-pick">
+        <legend>Your EV</legend>
+        <div class="ev-row">
+          <div><label for="year" class="mini">Year</label><select id="year" disabled><option>Loading…</option></select></div>
+          <div><label for="make" class="mini">Make</label><select id="make" disabled></select></div>
+        </div>
+        <label for="model" class="mini">Model and trim</label>
+        <select id="model" disabled></select>
+        <div class="source-line" id="vehicleLine"></div>
+        <div class="vehicle-note" id="vehicleNote"></div>
+      </fieldset>
+      <div class="field">
+        <label for="state">Your state</label>
+        <select id="state" disabled><option>Loading states…</option></select>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="rate">Electricity rate <span class="hint">(¢/kWh)</span></label>
+          <input id="rate" type="number" step="0.01" min="0" max="100" inputmode="decimal">
+          <div class="source-line" id="rateLine">Fills from your state. Use your bill's rate if you know it.</div>
+        </div>
+        <div class="field">
+          <label for="miles">Miles per month</label>
+          <input id="miles" type="number" step="50" min="0" max="10000" value="1000" inputmode="numeric">
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="mpg">Gas car to compare <span class="hint">(mpg)</span></label>
+          <input id="mpg" type="number" step="1" min="1" max="100" value="25" inputmode="numeric">
+        </div>
+        <div class="field">
+          <label for="gas">Gas price <span class="hint">($/gal)</span></label>
+          <input id="gas" type="number" step="0.01" min="0" max="15" inputmode="decimal">
+          <div class="source-line" id="gasLine"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="result" aria-live="polite">
+      <h2>Estimated home charging cost</h2>
+      <div class="big num"><span id="monthly">–</span><small> / month</small></div>
+      <div class="per num"><span id="perMile">–</span> per mile · <span id="kwh">–</span> kWh</div>
+      <div class="compare">
+        <div class="row"><span>Same miles on gas</span><b class="num" id="gasCost">–</b></div>
+        <div class="row"><span>Gas cost per mile</span><b class="num" id="gasMile">–</b></div>
+        <div class="save num" id="saveLine">Choose your EV to see your cost</div>
+      </div>
+      <p class="method">Formula: miles × (EPA kWh per 100 mi ÷ 100) × your rate. EPA's figure is measured at the wall, so charging losses are already included. State rates are averages that include all charges; time-of-use or EV plans can be much cheaper. <a href="how-we-calculate.html" style="color:var(--result-ink)">Full method</a></p>
+    </div>
+  </div>
+
+
+  <section class="block">
+    <h2>Cut the rate: home chargers</h2>
+    <p class="why">The estimate above assumes charging at home. If you're relying on public fast charging, which typically costs two to three times as much, a home charger usually pays for itself. These are placeholders.</p>
+    <div class="todo"><strong>Placeholder.</strong> Replace these three cards with real products once you're accepted into an affiliate program, and put your tracking links in the <code>href</code>. Delete this whole section until then, so you never publish invented prices.</div>
+    <div class="products">
+      <article class="product pick">
+        <span class="pick-flag">Our pick</span>
+        <h3>Product name</h3>
+        <p class="fit">One line on who this suits and why.</p>
+        <ul class="spec-list">
+          <li><span>Max output</span><span class="v">– kW</span></li>
+          <li><span>Cable length</span><span class="v">– ft</span></li>
+          <li><span>Outdoor rated</span><span class="v">–</span></li>
+        </ul>
+        <div class="buy-row"><div class="price">$–<small>price</small></div><a class="btn" href="#" rel="sponsored nofollow">Check price</a></div>
+        <span class="aff-mark">Affiliate link</span>
+      </article>
+      <article class="product">
+        <h3>Product name</h3>
+        <p class="fit">One line on who this suits and why.</p>
+        <ul class="spec-list">
+          <li><span>Max output</span><span class="v">– kW</span></li>
+          <li><span>Cable length</span><span class="v">– ft</span></li>
+          <li><span>Outdoor rated</span><span class="v">–</span></li>
+        </ul>
+        <div class="buy-row"><div class="price">$–<small>price</small></div><a class="btn" href="#" rel="sponsored nofollow">Check price</a></div>
+        <span class="aff-mark">Affiliate link</span>
+      </article>
+      <article class="product">
+        <h3>Product name</h3>
+        <p class="fit">One line on who this suits and why.</p>
+        <ul class="spec-list">
+          <li><span>Max output</span><span class="v">– kW</span></li>
+          <li><span>Cable length</span><span class="v">– ft</span></li>
+          <li><span>Outdoor rated</span><span class="v">–</span></li>
+        </ul>
+        <div class="buy-row"><div class="price">$–<small>price</small></div><a class="btn" href="#" rel="sponsored nofollow">Check price</a></div>
+        <span class="aff-mark">Affiliate link</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="sources">
+    <h2>Where these numbers come from</h2>
+    <ul class="src-list" id="sourceList"><li>Loading sources…</li></ul>
+  </section>
+</main>
+<footer class="site">
+  <div class="foot-inner">
+    <div><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="affiliate-disclosure.html">Affiliate disclosure</a><a href="how-we-calculate.html">How we calculate</a></div>
+    <div>&copy; 2026 WattCost. Estimates only; your utility bill is the final word.</div>
+  </div>
+</footer>
+<script>
+(function () {
+  var DATA = { rates: null, evs: null, gas: null };
+  var el = function (id) { return document.getElementById(id); };
+  var money = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+  var cents = function (n) { return (n * 100).toFixed(1) + '¢'; };
+  var monthName = function (ym) {
+    var p = ym.split('-'); return new Date(+p[0], +p[1] - 1, 1).toLocaleString('en-US', { month: 'long', year: 'numeric' });
+  };
+  var niceDate = function (d) {
+    var p = d.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  };
+
+  function load(name) {
+    return fetch('data/' + name + '.json', { cache: 'no-cache' }).then(function (r) {
+      if (!r.ok) throw new Error(name + '.json returned ' + r.status);
+      return r.json();
+    });
+  }
+
+  Promise.all([load('rates'), load('evs'), load('gas')]).then(function (res) {
+    DATA.rates = res[0]; DATA.evs = res[1]; DATA.gas = res[2];
+    buildYearMenu(); buildStateMenu(); buildSources();
+    el('year').disabled = false; el('state').disabled = false;
+    onState();
+  }).catch(function (err) {
+    console.error(err);
+    el('loadError').classList.add('show');
+    el('year').innerHTML = '<option>Data unavailable</option>';
+    el('state').innerHTML = '<option>Data unavailable</option>';
+  });
+
+  function uniq(arr) { return arr.filter(function (x, i) { return arr.indexOf(x) === i; }); }
+
+  // Fill a menu with a "Choose..." prompt first, so nothing is pre-selected.
+  function fill(sel, prompt, items) {
+    sel.innerHTML = '';
+    var o = document.createElement('option'); o.value = ''; o.textContent = prompt; sel.appendChild(o);
+    items.forEach(function (it) {
+      var opt = document.createElement('option'); opt.value = it.value; opt.textContent = it.label; sel.appendChild(opt);
+    });
+  }
+  function lock(sel, prompt) { fill(sel, prompt, []); sel.disabled = true; }
+
+  function buildYearMenu() {
+    var years = uniq(DATA.evs.vehicles.map(function (v) { return v.year; })).sort(function (a, b) { return b - a; });
+    fill(el('year'), 'Choose year', years.map(function (y) { return { value: y, label: y }; }));
+    lock(el('make'), 'Choose a year first');
+    lock(el('model'), 'Choose a make first');
+    clearResult();
+  }
+  function onYear() {
+    var y = +el('year').value;
+    if (!y) { lock(el('make'), 'Choose a year first'); lock(el('model'), 'Choose a make first'); onVehicle(); return; }
+    var keep = el('make').value;
+    var makes = uniq(DATA.evs.vehicles.filter(function (v) { return v.year === y; }).map(function (v) { return v.make; }))
+      .sort(function (a, b) { return a.localeCompare(b); });
+    fill(el('make'), 'Choose make', makes.map(function (m) { return { value: m, label: m }; }));
+    el('make').disabled = false;
+    if (keep && makes.indexOf(keep) !== -1) el('make').value = keep;   // keep the make if it exists that year
+    onMake();
+  }
+  function onMake() {
+    var y = +el('year').value, mk = el('make').value;
+    if (!mk) { lock(el('model'), 'Choose a make first'); onVehicle(); return; }
+    var models = DATA.evs.vehicles.filter(function (v) { return v.year === y && v.make === mk; })
+      .sort(function (a, b) { return a.model.localeCompare(b.model); });
+    fill(el('model'), 'Choose model and trim', models.map(function (v) { return { value: v.id, label: v.model }; }));
+    el('model').disabled = false;
+    onVehicle();
+  }
+
+  function clearResult() {
+    ['monthly', 'perMile', 'kwh', 'gasCost', 'gasMile'].forEach(function (id) { el(id).textContent = '–'; });
+    el('saveLine').textContent = 'Choose your EV to see your cost';
+    el('vehicleLine').textContent = '';
+    el('vehicleNote').style.display = 'none';
+  }
+
+  function buildStateMenu() {
+    var sel = el('state'); sel.innerHTML = '';
+    var blank = document.createElement('option'); blank.value = ''; blank.textContent = 'U.S. average';
+    sel.appendChild(blank);
+    Object.keys(DATA.rates.states).forEach(function (code) {
+      var o = document.createElement('option');
+      o.value = code; o.textContent = DATA.rates.states[code].name;
+      sel.appendChild(o);
+    });
+  }
+
+  function buildSources() {
+    var r = DATA.rates, e = DATA.evs, g = DATA.gas;
+    el('sourceList').innerHTML =
+      '<li><strong>Electricity rates:</strong> <a href="' + r.source_url + '" rel="noopener">' + r.source + '</a><br><span class="when">Data for ' + monthName(r.data_month) + ' · updated here ' + niceDate(r.updated) + '</span></li>' +
+      '<li><strong>EV efficiency:</strong> <a href="' + e.source_url + '" rel="noopener">' + e.source + '</a><br><span class="when">' + e.vehicles.length + ' vehicles · updated here ' + niceDate(e.updated) + '</span></li>' +
+      '<li><strong>Gas prices:</strong> <a href="' + g.source_url + '" rel="noopener">' + g.source + '</a><br><span class="when">Week of ' + niceDate(g.week_of) + ' · updated here ' + niceDate(g.updated) + '</span></li>';
+  }
+
+  function currentVehicle() {
+    var id = el('model').value;
+    return DATA.evs.vehicles.find(function (v) { return v.id === id; });
+  }
+
+  function onVehicle() {
+    var v = currentVehicle(); if (!v) { clearResult(); return; }
+    var label = v.source === 'EPA' ? 'EPA: ' : 'EPA label, per press reports: ';
+    var bits = [label + Math.round(v.kwh_per_100mi) + ' kWh/100 mi'];
+    if (v.mpge) bits.push(v.mpge + ' MPGe');
+    if (v.range_mi) bits.push(v.range_mi + ' mi range');
+    el('vehicleLine').textContent = bits.join(' · ');
+    var note = el('vehicleNote');
+    if (v.note) { note.textContent = v.note; note.style.display = 'block'; } else { note.style.display = 'none'; }
+    calc();
+  }
+
+  function onState() {
+    var code = el('state').value;
+    var r = code ? DATA.rates.states[code].cents_per_kwh : DATA.rates.us_average;
+    el('rate').value = r.toFixed(2);
+    el('rateLine').textContent = (code ? DATA.rates.states[code].name : 'U.S.') + ' average, ' + monthName(DATA.rates.data_month) + ' (EIA). Edit to use your bill\'s rate.';
+    var gasState = code && DATA.gas.states[code];
+    el('gas').value = (gasState || DATA.gas.us_average).toFixed(2);
+    el('gasLine').textContent = gasState ? 'State average, week of ' + niceDate(DATA.gas.week_of) : 'U.S. average, week of ' + niceDate(DATA.gas.week_of);
+    calc();
+  }
+
+  function calc() {
+    var v = currentVehicle(); if (!v) return;
+    var rate = parseFloat(el('rate').value) / 100;
+    var miles = parseFloat(el('miles').value);
+    var mpg = parseFloat(el('mpg').value);
+    var gas = parseFloat(el('gas').value);
+    if (!(rate >= 0) || !(miles >= 0)) return;
+    var kwh = miles * v.kwh_per_100mi / 100;
+    var cost = kwh * rate;
+    el('monthly').textContent = money(cost);
+    el('kwh').textContent = Math.round(kwh).toLocaleString('en-US');
+    el('perMile').textContent = miles > 0 ? cents(cost / miles) : '–';
+    if (mpg > 0 && gas >= 0) {
+      var gcost = miles / mpg * gas;
+      el('gasCost').textContent = money(gcost) + ' / mo';
+      el('gasMile').textContent = miles > 0 ? cents(gcost / miles) : '–';
+      var diff = gcost - cost;
+      el('saveLine').textContent = diff >= 1 ? 'About ' + money(diff) + ' a month cheaper than gas'
+        : diff <= -1 ? 'About ' + money(-diff) + ' a month more than gas at these numbers'
+        : 'About even with gas at these numbers';
+    }
+  }
+
+  el('year').addEventListener('change', onYear);
+  el('make').addEventListener('change', onMake);
+  el('model').addEventListener('change', onVehicle);
+  el('state').addEventListener('change', onState);
+  ['rate', 'miles', 'mpg', 'gas'].forEach(function (id) { el(id).addEventListener('input', calc); });
+})();
+</script>
+</body>
+</html>

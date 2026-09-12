@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How we calculate charging costs | WattCost</title>
+<meta name="description" content="The exact formula behind the WattCost calculator, our data sources, and what the estimate does not include."/>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/site.css"/>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="site-inner">
+    <div class="brand-wrap">
+      <a class="brand" href="index.html">Watt<span>Cost</span></a>
+      <span class="tag">Real numbers for EVs and home energy</span>
+    </div>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html">Calculator</a>
+      <a href="how-we-calculate.html" aria-current="page">How we calculate</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<div class="disclosure-bar">
+  <p><strong>Affiliate disclosure:</strong> some links on this site earn us a commission if you buy, at no extra cost to you. Commissions never change our math or our picks. <a href="affiliate-disclosure.html">How we make money</a></p>
+</div>
+<main id="main" class="article">
+  <h1>How we calculate</h1>
+
+<p class="lede">Every number on this site comes from a published government source. Here's the formula, the sources, and what the estimate leaves out.</p>
+
+<h2>The formula</h2>
+<p class="formula">monthly cost = miles per month &times; (EPA kWh per 100 miles &divide; 100) &times; your electricity rate</p>
+<p>For example: 1,000 miles a month in a car rated 32 kWh per 100 miles, at 18 cents per kWh, is 1,000 &times; 0.32 &times; $0.18 = <strong>$57.60</strong>.</p>
+<p>The gas comparison is the same idea: miles &divide; mpg &times; price per gallon.</p>
+
+<h2>Our sources</h2>
+<div class="data-status" id="dataStatus">Loading current data dates…</div>
+<ul>
+  <li><strong>EV efficiency:</strong> the EPA's official combined city/highway rating, from the vehicle data file on fueleconomy.gov. We use it exactly as published.</li>
+  <li><strong>Electricity prices:</strong> the EIA's average residential price per state, from Electric Power Monthly. This is an average of everything residential customers actually paid, including fixed charges and taxes.</li>
+  <li><strong>Gas prices:</strong> the EIA's weekly Gasoline and Diesel Fuel Update. EIA publishes weekly state figures for only nine states; everywhere else we use the national average and say so on the page.</li>
+</ul>
+
+<h2>Why charging losses are already included</h2>
+<p>Charging isn't perfectly efficient. Some energy is lost as heat between the wall and the battery. You don't need to add anything for this, because the EPA measures its rating at the wall outlet. The loss is already in the number.</p>
+
+<h2>What the estimate does not include</h2>
+<ul>
+  <li><strong>Your actual rate plan.</strong> State averages hide a lot. Time-of-use and EV-specific plans can charge far less overnight, which is when most people charge. If you know your real rate, type it in; the calculator uses whatever you enter.</li>
+  <li><strong>Public fast charging</strong>, which usually costs two to three times home charging.</li>
+  <li><strong>Cold weather and high speeds.</strong> EPA ratings come from standardized tests. Winter driving and sustained highway speeds both use noticeably more energy than the rating suggests.</li>
+  <li><strong>Fees and taxes</strong> beyond what's already in the EIA average, and any EV registration surcharge your state charges.</li>
+</ul>
+
+<h2>How often we update</h2>
+<p>Monthly. EIA publishes new state electricity prices near the end of each month, and we refresh the EPA vehicle list at the same time. Every figure on the calculator shows the date of the data it came from, so you can judge for yourself whether it's current.</p>
+
+<h2>Found an error?</h2>
+<p>Tell us which figure and which source, and we'll check it. <a href="contact.html">Contact us</a>.</p>
+</main>
+<footer class="site">
+  <div class="foot-inner">
+    <div><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="affiliate-disclosure.html">Affiliate disclosure</a><a href="how-we-calculate.html">How we calculate</a></div>
+    <div>&copy; 2026 WattCost. Estimates only; your utility bill is the final word.</div>
+  </div>
+</footer>
+<script>
+fetch('data/rates.json').then(function (r) { return r.json(); }).then(function (d) {
+  var p = d.data_month.split('-');
+  var month = new Date(+p[0], +p[1] - 1, 1).toLocaleString('en-US', { month: 'long', year: 'numeric' });
+  document.getElementById('dataStatus').innerHTML =
+    '<strong>Current data:</strong> electricity prices for ' + month + ' · last refreshed ' + d.updated;
+}).catch(function () {
+  document.getElementById('dataStatus').style.display = 'none';
+});
+</script>
+</body>
+</html>

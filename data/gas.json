@@ -1,0 +1,20 @@
+{
+  "week_of": "2026-09-07",
+  "updated": "2026-09-11",
+  "unit": "dollars per gallon, regular gasoline, all taxes included",
+  "source": "U.S. EIA, Gasoline and Diesel Fuel Update (released Sep 9, 2026)",
+  "source_url": "https://www.eia.gov/petroleum/gasdiesel/",
+  "us_average": 4.157,
+  "note": "EIA publishes weekly prices for only these 9 states. Other states fall back to the U.S. average.",
+  "states": {
+    "CA": 5.678,
+    "CO": 4.187,
+    "FL": 3.86,
+    "MA": 4.16,
+    "MN": 4.077,
+    "NY": 4.26,
+    "OH": 3.885,
+    "TX": 3.618,
+    "WA": 5.483
+  }
+}

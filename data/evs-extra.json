@@ -1,0 +1,4 @@
+{
+  "note": "Vehicles not yet in EPA's download. The build script merges these in and warns when EPA catches up.",
+  "vehicles": []
+}

@@ -1,0 +1,215 @@
+{
+  "data_month": "2026-06",
+  "updated": "2026-09-11",
+  "unit": "cents per kWh, average residential price (all charges, revenue divided by sales)",
+  "source": "U.S. EIA, Electric Power Monthly, Table 5.6.A (released Aug 26, 2026)",
+  "source_url": "https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a",
+  "verification": "All 50 state values matched exactly across two independent republications of the EIA table (energyfactbook.com and chooseenergy.com). DC appears in only one of them; spot-check it against EIA.",
+  "us_average": 18.34,
+  "states": {
+    "AL": {
+      "name": "Alabama",
+      "cents_per_kwh": 16.4
+    },
+    "AK": {
+      "name": "Alaska",
+      "cents_per_kwh": 28.21
+    },
+    "AZ": {
+      "name": "Arizona",
+      "cents_per_kwh": 15.18
+    },
+    "AR": {
+      "name": "Arkansas",
+      "cents_per_kwh": 14.12
+    },
+    "CA": {
+      "name": "California",
+      "cents_per_kwh": 34.74
+    },
+    "CO": {
+      "name": "Colorado",
+      "cents_per_kwh": 17.13
+    },
+    "CT": {
+      "name": "Connecticut",
+      "cents_per_kwh": 24.32
+    },
+    "DE": {
+      "name": "Delaware",
+      "cents_per_kwh": 19.29
+    },
+    "DC": {
+      "name": "District of Columbia",
+      "cents_per_kwh": 24.39
+    },
+    "FL": {
+      "name": "Florida",
+      "cents_per_kwh": 15.1
+    },
+    "GA": {
+      "name": "Georgia",
+      "cents_per_kwh": 16.36
+    },
+    "HI": {
+      "name": "Hawaii",
+      "cents_per_kwh": 52.72
+    },
+    "ID": {
+      "name": "Idaho",
+      "cents_per_kwh": 14.37
+    },
+    "IL": {
+      "name": "Illinois",
+      "cents_per_kwh": 19.89
+    },
+    "IN": {
+      "name": "Indiana",
+      "cents_per_kwh": 17.51
+    },
+    "IA": {
+      "name": "Iowa",
+      "cents_per_kwh": 15.93
+    },
+    "KS": {
+      "name": "Kansas",
+      "cents_per_kwh": 15.71
+    },
+    "KY": {
+      "name": "Kentucky",
+      "cents_per_kwh": 14.26
+    },
+    "LA": {
+      "name": "Louisiana",
+      "cents_per_kwh": 13.49
+    },
+    "ME": {
+      "name": "Maine",
+      "cents_per_kwh": 29.59
+    },
+    "MD": {
+      "name": "Maryland",
+      "cents_per_kwh": 21.84
+    },
+    "MA": {
+      "name": "Massachusetts",
+      "cents_per_kwh": 29.61
+    },
+    "MI": {
+      "name": "Michigan",
+      "cents_per_kwh": 22.99
+    },
+    "MN": {
+      "name": "Minnesota",
+      "cents_per_kwh": 17.52
+    },
+    "MS": {
+      "name": "Mississippi",
+      "cents_per_kwh": 14.88
+    },
+    "MO": {
+      "name": "Missouri",
+      "cents_per_kwh": 16.22
+    },
+    "MT": {
+      "name": "Montana",
+      "cents_per_kwh": 15.14
+    },
+    "NE": {
+      "name": "Nebraska",
+      "cents_per_kwh": 13.25
+    },
+    "NV": {
+      "name": "Nevada",
+      "cents_per_kwh": 13.11
+    },
+    "NH": {
+      "name": "New Hampshire",
+      "cents_per_kwh": 27.01
+    },
+    "NJ": {
+      "name": "New Jersey",
+      "cents_per_kwh": 24.95
+    },
+    "NM": {
+      "name": "New Mexico",
+      "cents_per_kwh": 15.06
+    },
+    "NY": {
+      "name": "New York",
+      "cents_per_kwh": 29.49
+    },
+    "NC": {
+      "name": "North Carolina",
+      "cents_per_kwh": 14.74
+    },
+    "ND": {
+      "name": "North Dakota",
+      "cents_per_kwh": 14.12
+    },
+    "OH": {
+      "name": "Ohio",
+      "cents_per_kwh": 19.19
+    },
+    "OK": {
+      "name": "Oklahoma",
+      "cents_per_kwh": 14.33
+    },
+    "OR": {
+      "name": "Oregon",
+      "cents_per_kwh": 16.32
+    },
+    "PA": {
+      "name": "Pennsylvania",
+      "cents_per_kwh": 21.73
+    },
+    "RI": {
+      "name": "Rhode Island",
+      "cents_per_kwh": 29.23
+    },
+    "SC": {
+      "name": "South Carolina",
+      "cents_per_kwh": 15.55
+    },
+    "SD": {
+      "name": "South Dakota",
+      "cents_per_kwh": 15.36
+    },
+    "TN": {
+      "name": "Tennessee",
+      "cents_per_kwh": 14.07
+    },
+    "TX": {
+      "name": "Texas",
+      "cents_per_kwh": 15.94
+    },
+    "UT": {
+      "name": "Utah",
+      "cents_per_kwh": 13.37
+    },
+    "VT": {
+      "name": "Vermont",
+      "cents_per_kwh": 24.44
+    },
+    "VA": {
+      "name": "Virginia",
+      "cents_per_kwh": 17.22
+    },
+    "WA": {
+      "name": "Washington",
+      "cents_per_kwh": 14.91
+    },
+    "WV": {
+      "name": "West Virginia",
+      "cents_per_kwh": 15.45
+    },
+    "WI": {
+      "name": "Wisconsin",
+      "cents_per_kwh": 19.56
+    },
+    "WY": {
+      "name": "Wyoming",
+      "cents_per_kwh": 15.24
+    }
+  }
+}
