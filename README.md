@@ -7,6 +7,7 @@ JavaScript, no server needed. Every figure comes from a published source.
 
 ```
 index.html                  Charging cost calculator (the home page)
+finder.html                 EV finder: weighted match for first-time buyers
 carbon.html                 Carbon payback calculator
 how-we-calculate.html       Formulas, sources, and what each estimate leaves out
 about.html                  Who runs the site and how it makes money
@@ -21,9 +22,14 @@ data/rates.json             Electricity price, all 50 states + DC (EIA, June 202
 data/gas.json               Gas prices (EIA, week of Sep 7, 2026)
 data/evs.json               Every EV the EPA has rated: 1,572 trims, 1998-2027
 data/evs-extra.json         Cars EPA hasn't published yet (empty right now)
+data/models.json            EV finder's shopping list: EPA facts filled in
+                            automatically, the rest filled in BY YOU (see below)
+data/guidance.json          Winter range loss (AAA + Recurrent), incentive status,
+                            home-charging guidance, all with sources
 data/carbon.json            Grid emissions by state (EPA eGRID2023), IPCC source
                             factors, ICCT battery factors, EPA gasoline and tree factors
 tools/build_evs_from_epa.py Turns EPA's download into data/evs.json
+tools/build_models_from_epa.py  Turns EPA's download into data/models.json
 robots.txt                  Tells search engines they may index the site
 sitemap.xml                 List of pages for search engines
 ```
@@ -48,6 +54,55 @@ Also:
    tmsearch.uspto.gov and check the domain before buying anything with the name on it.
 5. **Write real articles** before applying to AdSense. Calculators plus policy pages
    is a thin site on its own.
+6. **Check data/guidance.json once a year.** It holds the federal incentive status
+   (currently: expired) and the winter range figures. Tax rules change; the file records
+   what was checked and when.
+
+## Filling in the EV finder (data/models.json)
+
+EPA publishes range, efficiency, body style and drive type, and the build script fills
+those in for all 331 current models automatically. EPA publishes NO price, NO DC
+fast-charging speed, NO seat count, and nothing about physical buttons. Those are on you.
+
+The finder works anyway: a car with blank fields still appears, ranked on its EPA data,
+but shows "not checked yet" in amber and scores neutral on whatever is missing. Filters
+never exclude a car for a value you haven't entered. So nothing is guessed, and nothing
+is silently hidden either. Every model you fill in makes the results sharper.
+
+For each car you want to appear, open data/models.json and fill in:
+
+```
+"starting_price_usd": 35000,        from the manufacturer's own build-and-price page
+"dc_peak_kw": 150,                  manufacturer's peak DC fast-charging speed
+"dc_10_80_minutes": 43,             if the manufacturer publishes it, else leave null
+"controls": "mixed",                "buttons", "mixed", or "touchscreen"
+"controls_note": "climate knobs, volume knob, rest on screen",
+"seats": 5,
+"cargo_cu_ft": 26.4,                behind the rear seats
+"tow_rating_lbs": 1500,             0 if the maker says it can't tow
+"heat_pump": true,                  matters a lot in cold climates
+"port": "NACS",                     or "CCS"
+"reliability_score": 4,             1 to 5, YOUR call after reading the sources
+"reliability_source": "Consumer Reports Feb 2026 predicted reliability + 2 NHTSA recalls",
+"reliability_url": "https://www.nhtsa.gov/recalls",
+"source_url": "https://www.chevrolet.com/electric/equinox-ev",
+"checked": "2026-09-12"
+```
+
+Rules that keep this defensible:
+
+- **Use the manufacturer's page for specs.** One search for a single car's starting
+  price returned three different numbers from three sites. Go to the source.
+- **Don't copy Consumer Reports or J.D. Power ratings into the file.** Those ratings are
+  their property. Read them, form your own 1-to-5 view, and write what it's based on in
+  `reliability_source` with a link. Free federal complaint and recall records are at
+  https://www.nhtsa.gov/recalls
+- **Record the date.** Prices change; `checked` tells readers how stale a figure is.
+- **Start with 10 to 15 popular models.** That's enough for the finder to give real
+  answers, and it's a couple of hours of work rather than a month.
+
+Re-running `python3 tools/build_models_from_epa.py` keeps everything you've typed and
+only refreshes the EPA fields.
 
 ## Preview on your computer
 
@@ -73,13 +128,19 @@ Press Control + C to stop the server when you're done.
    into `data/rates.json`, keeping the format. Update `data_month` and `updated`.
 2. **Gas prices.** Same from the EIA Gasoline and Diesel Fuel Update into `data/gas.json`.
 3. **EVs.** Download `vehicles.csv.zip` from fueleconomy.gov, unzip `vehicles.csv` into
-   `tools/`, run `python3 tools/build_evs_from_epa.py`, then delete `tools/vehicles.csv`.
+   `tools/`, run `python3 tools/build_evs_from_epa.py` AND
+   `python3 tools/build_models_from_epa.py`, then delete `tools/vehicles.csv`.
+   Re-check a few prices in models.json while you're there; prices go stale fastest.
 4. **Spot-check** 2 or 3 numbers against the official sites yourself. Don't skip this.
 5. **Commit and push.**
 
 ## Yearly update
 
-`data/carbon.json` changes rarely. EPA releases a new eGRID about once a year
+`data/models.json            EV finder's shopping list: EPA facts filled in
+                            automatically, the rest filled in BY YOU (see below)
+data/guidance.json          Winter range loss (AAA + Recurrent), incentive status,
+                            home-charging guidance, all with sources
+data/carbon.json` changes rarely. EPA releases a new eGRID about once a year
 (check https://www.epa.gov/egrid/summary-data). When it arrives, update the state
 CO2e column and the grid-loss figure, and change `updated`. The IPCC and ICCT factors
 only change if those studies are revised.

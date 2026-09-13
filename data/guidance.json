@@ -1,0 +1,28 @@
+{
+  "updated": "2026-09-13",
+  "winter": {
+    "aaa_loss_pct_20f_with_heat": 41,
+    "aaa_loss_pct_20f_no_heat": 12,
+    "aaa_source": "AAA, 'Cold Weather Reduces Electric Vehicle Range' (Feb 7, 2019): at 20°F with the cabin heater running, average driving range fell 41%. Without the heater the loss was about 12%.",
+    "aaa_url": "https://newsroom.aaa.com/2019/02/cold-weather-reduces-electric-vehicle-range/",
+    "recurrent_loss_pct_freezing": 22,
+    "recurrent_source": "Recurrent's ongoing study of tens of thousands of real-world EVs reports roughly a 20 to 30% average loss at temperatures near freezing, with wide variation between models.",
+    "recurrent_url": "https://www.recurrentauto.com/research/winter-ev-range-loss",
+    "note": "The two figures measure different things: AAA tested at 20°F on a dynamometer with the heater on, Recurrent measures real-world driving near freezing. We show both rather than picking one. Preconditioning the car while it is still plugged in recovers much of the loss, and cars with heat pumps do better."
+  },
+  "incentives": {
+    "federal_purchase_credit": "expired",
+    "federal_note": "The federal purchase credits for new (Section 30D, up to $7,500) and used (Section 25E, up to $4,000) clean vehicles ended for vehicles acquired after September 30, 2025 under the One Big Beautiful Bill Act. The Section 30C home charger credit ended for equipment placed in service after June 30, 2026. There is no federal EV purchase credit for a 2026 buyer.",
+    "state_note": "Several states and many utilities still run their own rebates. Amounts and funding change without much notice, so check your state energy office and your utility before counting on a figure.",
+    "source_url": "https://fueleconomy.gov/feg/tax-law.shtml",
+    "checked": "2026-09-13",
+    "caution": "Tax rules change. Confirm current status with the IRS or a tax professional before it affects a purchase."
+  },
+  "home_charging": {
+    "levels": [
+      {"id": "l2", "label": "A 240-volt outlet or charger where I park", "note": "The best case. Almost every EV here refills overnight, and fast-charging speed matters mainly on road trips."},
+      {"id": "l1", "label": "Only a regular household outlet", "note": "A standard outlet adds roughly 3 to 5 miles of range per hour, so about 40 miles overnight. Fine for short commutes; frustrating otherwise. Ask an electrician what a 240-volt circuit would cost before you buy the car."},
+      {"id": "none", "label": "Nothing at home, I'd use public chargers", "note": "This is the hardest way to own an EV and the most common source of regret. Fast-charging speed and nearby charger coverage matter far more than range. Check what is actually near you on a map before committing."}
+    ]
+  }
+}

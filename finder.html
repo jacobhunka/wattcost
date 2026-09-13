@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Find Your First EV | Volt & Ledger</title>
+<meta name="description" content="A beginner-friendly EV finder. Set how much you care about range, charging speed, reliability, price, buttons and size, and see three matches with the reasoning shown."/>
+<meta property="og:title" content="Find Your First EV | Volt & Ledger"/>
+<meta property="og:description" content="A beginner-friendly EV finder. Set how much you care about range, charging speed, reliability, price, buttons and size, and see three matches with the reasoning shown."/>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/site.css"/>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="site-inner">
+    <div class="brand-wrap">
+      <a class="brand" href="index.html">Volt <span>&amp;</span> Ledger</a>
+      <span class="tag">What an EV really costs, in dollars and carbon</span>
+    </div>
+    <nav class="site-nav" aria-label="Main">
+      <a href="finder.html" aria-current="page">Find an EV</a>
+      <a href="index.html">Charging cost</a>
+      <a href="carbon.html">Carbon payback</a>
+      <a href="how-we-calculate.html">How we calculate</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<div class="disclosure-bar">
+  <p><strong>Affiliate disclosure:</strong> some links on this site earn us a commission if you buy, at no extra cost to you. Commissions never change our math or our picks. <a href="affiliate-disclosure.html">How we make money</a></p>
+</div>
+
+<main id="main">
+  <h1>Find your first EV</h1>
+  <p class="sub">Tell us what matters and how much. Set a percentage against each thing you care about, add your filters, and we'll show the three closest matches with the reasoning shown. Built for people buying their first electric car. Nothing you enter is saved.</p>
+
+  <div class="notice" id="loadError" role="alert">
+    <strong>The data files didn't load.</strong> Run <code>python3 -m http.server --bind 127.0.0.1</code> in the site folder and visit <code>http://127.0.0.1:8000/finder.html</code>, or view it on the live site.
+  </div>
+
+  <div class="callout">
+    <strong>Before anything else: where will you plug in?</strong> This matters more than any specification on this page. Set it below and the results change accordingly.
+  </div>
+
+  <div class="calc-grid">
+    <div class="panel">
+      <h2>Your situation</h2>
+      <div class="field">
+        <label for="homeCharge">Charging where you park overnight</label>
+        <select id="homeCharge"></select>
+        <div class="source-line" id="homeNote"></div>
+      </div>
+      <div class="field">
+        <label class="check"><input type="checkbox" id="cold"> I get real winters (regular freezing weather)</label>
+        <div class="source-line" id="coldNote"></div>
+      </div>
+
+      <h2 style="margin-top:1.6rem">What matters to you?</h2>
+      <p class="weights-intro">Drag each slider. They always add up to 100%, so raising one lowers the others. Set anything you don't care about to zero.</p>
+      <div id="weights"></div>
+      <div class="weights-total">Total: <strong><span id="weightTotal">100</span>%</strong> <button type="button" class="btn-reset" id="resetWeights">Reset to even</button></div>
+
+      <h2 style="margin-top:1.6rem">Filters</h2>
+      <p class="weights-intro">These rule cars out rather than scoring them. A car is never ruled out by a spec we haven't checked for it.</p>
+      <div class="field-row">
+        <div class="field">
+          <label for="budget">Most you'd spend <span class="hint">(starting price)</span></label>
+          <input id="budget" type="number" step="1000" min="0" max="200000" placeholder="No limit" inputmode="numeric">
+        </div>
+        <div class="field">
+          <label for="minRange">Least range you'd accept <span class="hint">(mi)</span></label>
+          <input id="minRange" type="number" step="10" min="0" max="600" value="200" inputmode="numeric">
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="bodyPick">Body style</label>
+          <select id="bodyPick"><option value="">Any</option></select>
+        </div>
+        <div class="field">
+          <label for="drivePick">Drive</label>
+          <select id="drivePick"><option value="">Any</option><option value="FWD">FWD</option><option value="RWD">RWD</option><option value="AWD">AWD</option></select>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="seatsPick">Seats needed</label>
+          <select id="seatsPick"><option value="">Any</option><option value="5">5 or more</option><option value="6">6 or more</option><option value="7">7 or more</option></select>
+        </div>
+        <div class="field">
+          <label for="towPick">Towing</label>
+          <select id="towPick"><option value="">Not needed</option><option value="1">Must be able to tow</option><option value="3500">3,500 lb or more</option><option value="5000">5,000 lb or more</option></select>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="controlPref">Dashboard controls</label>
+          <select id="controlPref">
+            <option value="none">No preference</option>
+            <option value="buttons">I want real buttons and knobs</option>
+            <option value="touchscreen">A touchscreen is fine</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="portPick">Charging plug</label>
+          <select id="portPick"><option value="">Either</option><option value="NACS">NACS (Tesla-style)</option><option value="CCS">CCS</option></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="result result-light" aria-live="polite">
+      <h2>Your top three</h2>
+      <div id="matches"><p class="muted">Loading…</p></div>
+    </div>
+  </div>
+
+  <section class="sources">
+    <h2>How this works, and what it can't tell you</h2>
+    <div id="dataStatus" class="data-status">Loading…</div>
+    <ul class="src-list">
+      <li><strong>Range, efficiency, body style, drive and overnight charge time</strong> come from the EPA's published vehicle data, for every current EV.</li>
+      <li><strong>Price, fast-charging speed, seats, cargo, towing, plug type and dashboard controls</strong> are entered by hand from each manufacturer's own page, with the page and date recorded. EPA publishes none of them, and aggregator sites disagree: one search for a single car's starting price returned four different figures. A car whose field is blank is labelled "not checked yet" rather than guessed at.</li>
+      <li><strong>Reliability</strong> is a 1-to-5 judgment recorded here with its reasoning and a link, not a rating copied from anyone. Consumer Reports and J.D. Power own their ratings; we don't republish them. Free federal complaint and recall records are at <a href="https://www.nhtsa.gov/recalls" rel="noopener">NHTSA</a>.</li>
+      <li><strong>Winter range</strong> uses <a id="aaaLink" href="https://newsroom.aaa.com/2019/02/cold-weather-reduces-electric-vehicle-range/" rel="noopener">AAA's cold-weather testing</a> and <a id="recLink" href="https://www.recurrentauto.com/research/winter-ev-range-loss" rel="noopener">Recurrent's real-world study</a>. <span id="winterSrc"></span></li>
+      <li><strong>Incentives:</strong> <span id="incentiveText">loading…</span></li>
+    </ul>
+    <p class="muted" style="margin-top:0.8rem"><a href="how-we-calculate.html#finder">Full method</a>. Whatever the scores say, drive the car before you buy it.</p>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="foot-inner">
+    <div><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="affiliate-disclosure.html">Affiliate disclosure</a><a href="how-we-calculate.html">How we calculate</a></div>
+    <div>&copy; 2026 Volt & Ledger. Estimates only; your utility bill is the final word.</div>
+  </div>
+</footer>
+<script>
+(function () {
+  var D = {}, M = [];
+  var el = function (id) { return document.getElementById(id); };
+  var CRIT = [
+    { id: 'range', label: 'Range', hint: 'How far on a charge' },
+    { id: 'charging', label: 'Charging speed', hint: 'Fast-charging on road trips' },
+    { id: 'reliability', label: 'Reliability', hint: 'How much trouble it gives' },
+    { id: 'price', label: 'Price', hint: 'Lower is better' },
+    { id: 'controls', label: 'Buttons vs touchscreen', hint: 'Matches your preference below' },
+    { id: 'size', label: 'Size', hint: 'Matches the body style filter' },
+    { id: 'efficiency', label: 'Efficiency', hint: 'Cheaper per mile to run' }
+  ];
+  var W = {};
+  function evenWeights() {
+    CRIT.forEach(function (c) { W[c.id] = Math.round(100 / CRIT.length); });
+    W[CRIT[0].id] += 100 - CRIT.reduce(function (a, c) { return a + W[c.id]; }, 0);
+  }
+  evenWeights();
+
+  Promise.all([
+    fetch('data/models.json', { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error('models'); return r.json(); }),
+    fetch('data/guidance.json', { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error('guidance'); return r.json(); })
+  ]).then(function (res) {
+    D.models = res[0]; D.g = res[1]; M = res[0].models;
+    buildWeights(); buildBodyMenu(); buildHomeMenu(); fillSources(); status(); rank();
+  }).catch(function (e) { console.error(e); el('loadError').classList.add('show'); });
+
+  function buildWeights() {
+    el('weights').innerHTML = CRIT.map(function (c) {
+      return '<div class="weight-row"><label for="w-' + c.id + '">' + c.label +
+        ' <span class="hint">' + c.hint + '</span></label>' +
+        '<div class="weight-ctl"><input type="range" id="w-' + c.id + '" min="0" max="100" step="5" value="' + W[c.id] + '">' +
+        '<output id="o-' + c.id + '">' + W[c.id] + '%</output></div></div>';
+    }).join('');
+    CRIT.forEach(function (c) {
+      el('w-' + c.id).addEventListener('input', function () { rebalance(c.id, +this.value); });
+    });
+  }
+
+  // Keep the sliders summing to 100 by spreading the difference across the others.
+  function rebalance(changed, value) {
+    var others = CRIT.map(function (c) { return c.id; }).filter(function (id) { return id !== changed; });
+    var otherTotal = others.reduce(function (a, id) { return a + W[id]; }, 0);
+    var room = 100 - value;
+    W[changed] = value;
+    if (otherTotal === 0) {
+      others.forEach(function (id, i) { W[id] = i === 0 ? room : 0; });
+    } else {
+      var left = room;
+      others.forEach(function (id, i) {
+        W[id] = Math.max(0, i === others.length - 1 ? left : Math.round(W[id] / otherTotal * room));
+        left -= W[id];
+      });
+      if (left !== 0) W[others[others.length - 1]] = Math.max(0, W[others[others.length - 1]] + left);
+    }
+    syncWeights(); rank();
+  }
+  function syncWeights() {
+    CRIT.forEach(function (c) { el('w-' + c.id).value = W[c.id]; el('o-' + c.id).textContent = W[c.id] + '%'; });
+    el('weightTotal').textContent = CRIT.reduce(function (a, c) { return a + W[c.id]; }, 0);
+  }
+
+  function buildBodyMenu() {
+    var bodies = [];
+    M.forEach(function (m) { (m.body || []).forEach(function (b) { if (bodies.indexOf(b) === -1) bodies.push(b); }); });
+    bodies.sort().forEach(function (b) {
+      var o = document.createElement('option'); o.value = b; o.textContent = b; el('bodyPick').appendChild(o);
+    });
+  }
+  function buildHomeMenu() {
+    D.g.home_charging.levels.forEach(function (l) {
+      var o = document.createElement('option'); o.value = l.id; o.textContent = l.label; el('homeCharge').appendChild(o);
+    });
+    onHome();
+  }
+  function currentHome() {
+    var id = el('homeCharge').value;
+    return D.g.home_charging.levels.find(function (l) { return l.id === id; });
+  }
+  function onHome() {
+    var l = currentHome();
+    el('homeNote').textContent = l ? l.note : '';
+    // With no home charging, fast-charging speed decides daily life, so weight it up.
+    if (l && l.id === 'none' && W.charging < 30) { rebalance('charging', 30); return; }
+    rank();
+  }
+
+  function fillSources() {
+    var w = D.g.winter, inc = D.g.incentives;
+    el('winterSrc').textContent = 'AAA measured a ' + w.aaa_loss_pct_20f_with_heat + '% loss at 20F with the heater on; Recurrent reports roughly ' +
+      w.recurrent_loss_pct_freezing + '% near freezing in real-world use. ' + w.note;
+    el('aaaLink').href = w.aaa_url; el('recLink').href = w.recurrent_url;
+    el('incentiveText').innerHTML = inc.federal_note + ' ' + inc.state_note + ' <a href="' + inc.source_url + '" rel="noopener">Official summary</a>. Checked ' + inc.checked + '. ' + inc.caution;
+    el('coldNote').textContent = 'Cold cuts range well below the EPA figure: AAA measured ' + w.aaa_loss_pct_20f_with_heat +
+      '% at 20F with the heater running, and Recurrent about ' + w.recurrent_loss_pct_freezing + '% near freezing. Tick this and your minimum-range filter is judged against the colder figure.';
+  }
+
+  function status() {
+    var checked = M.filter(function (m) { return m.starting_price_usd !== null; }).length;
+    el('dataStatus').innerHTML = '<strong>Current data:</strong> ' + M.length + ' model-year ' + D.models.model_years +
+      ' EVs from EPA. <strong>' + checked + '</strong> have hand-checked price, charging and controls; the rest show those as "not checked yet" and score neutral on them. Updated ' + D.models.updated + '.';
+  }
+
+  function norm(v, lo, hi) { return hi === lo ? 0.5 : Math.max(0, Math.min(1, (v - lo) / (hi - lo))); }
+  function has(v) { return v !== null && v !== undefined; }
+  function winterRange(mi) { return Math.round(mi * (1 - D.g.winter.aaa_loss_pct_20f_with_heat / 100)); }
+
+  function rank() {
+    var budget = parseFloat(el('budget').value);
+    var minRange = parseFloat(el('minRange').value) || 0;
+    var cold = el('cold').checked;
+    var body = el('bodyPick').value, drive = el('drivePick').value, cpref = el('controlPref').value;
+    var seats = parseFloat(el('seatsPick').value) || 0, tow = parseFloat(el('towPick').value) || 0, port = el('portPick').value;
+
+    // Filters skip a car only when we actually know the value being filtered on.
+    var pool = M.filter(function (m) {
+      var r = m.range_max_mi || 0;
+      if ((cold ? winterRange(r) : r) < minRange) return false;
+      if (body && m.body.indexOf(body) === -1) return false;
+      if (drive && m.drive.indexOf(drive) === -1) return false;
+      if (budget > 0 && has(m.starting_price_usd) && m.starting_price_usd > budget) return false;
+      if (seats && has(m.seats) && m.seats < seats) return false;
+      if (tow && has(m.tow_rating_lbs) && m.tow_rating_lbs < tow) return false;
+      if (port && has(m.port) && m.port !== port) return false;
+      return true;
+    });
+    if (!pool.length) {
+      el('matches').innerHTML = '<p class="muted">No cars match those filters. Try raising your budget, lowering the range you need, or setting body style to Any.</p>';
+      return;
+    }
+
+    var span = function (key) {
+      var vals = pool.map(function (m) { return m[key]; }).filter(has);
+      return vals.length ? [Math.min.apply(null, vals), Math.max.apply(null, vals)] : null;
+    };
+    var sR = span('range_max_mi'), sK = span('dc_peak_kw'), sP = span('starting_price_usd'), sE = span('kwh_per_100mi_best');
+
+    var scored = pool.map(function (m) {
+      var s = {}, unknown = [];
+      s.range = sR && has(m.range_max_mi) ? norm(m.range_max_mi, sR[0], sR[1]) : 0.5;
+      s.efficiency = sE && has(m.kwh_per_100mi_best) ? 1 - norm(m.kwh_per_100mi_best, sE[0], sE[1]) : 0.5;
+      s.size = body ? (m.body.indexOf(body) !== -1 ? 1 : 0) : 0.5;
+      if (has(m.dc_peak_kw) && sK) { s.charging = norm(m.dc_peak_kw, sK[0], sK[1]); } else { s.charging = 0.5; unknown.push('charging speed'); }
+      if (has(m.starting_price_usd) && sP) { s.price = 1 - norm(m.starting_price_usd, sP[0], sP[1]); } else { s.price = 0.5; unknown.push('price'); }
+      if (has(m.reliability_score)) { s.reliability = norm(m.reliability_score, 1, 5); } else { s.reliability = 0.5; unknown.push('reliability'); }
+      if (has(m.controls)) {
+        s.controls = cpref === 'none' ? 0.5
+          : cpref === 'buttons' ? (m.controls === 'buttons' ? 1 : m.controls === 'mixed' ? 0.5 : 0)
+          : (m.controls === 'touchscreen' ? 1 : m.controls === 'mixed' ? 0.75 : 0.5);
+      } else { s.controls = 0.5; if (cpref !== 'none') unknown.push('controls'); }
+      var total = CRIT.reduce(function (a, c) { return a + (W[c.id] / 100) * s[c.id]; }, 0);
+      return { m: m, s: s, total: total, unknown: unknown };
+    }).sort(function (a, b) { return b.total - a.total; });
+
+    // One entry per car: don't fill the top three with trims of the same model.
+    var seen = {}, top = [];
+    scored.forEach(function (x) {
+      var t = x.m.model.replace(/\b(RWD|AWD|FWD|4WD|2WD|Long Range|Standard Range|Extended Range|Dual Motor|Tri Motor|Quad Motor|Single Motor|Max Pack|Large Pack|quattro)\b/gi, '').trim().split(/\s+/);
+      var base = t[0];
+      if (t[1] && (t[1].length <= 2 || /^[0-9]/.test(t[1]))) base += ' ' + t[1];
+      var key = (x.m.make + ' ' + base).toLowerCase();
+      if (seen[key] || top.length === 3) return;
+      seen[key] = true; top.push(x);
+    });
+
+    el('matches').innerHTML = top.map(function (x, i) {
+      var m = x.m, li = [];
+      li.push(has(m.starting_price_usd) ? 'From $' + m.starting_price_usd.toLocaleString('en-US') : '<span class="unchecked">Price not checked yet</span>');
+      var r = m.range_max_mi;
+      li.push(r ? (r + ' mi EPA range' + (cold ? ' · about ' + winterRange(r) + ' mi in hard cold' : '')) : 'Range not listed');
+      li.push(has(m.dc_peak_kw) ? m.dc_peak_kw + ' kW fast charging' : '<span class="unchecked">Fast-charging speed not checked yet</span>');
+      if (m.ac_charge_hours_240v) li.push('About ' + m.ac_charge_hours_240v + ' h to fill on a 240-volt charger');
+      li.push(m.body.join(', ') + ' · ' + m.drive.join('/') + (has(m.seats) ? ' · ' + m.seats + ' seats' : ''));
+      li.push(has(m.controls) ? 'Controls: ' + m.controls + (m.controls_note ? ' (' + m.controls_note + ')' : '') : '<span class="unchecked">Controls not checked yet</span>');
+      if (has(m.tow_rating_lbs)) li.push(m.tow_rating_lbs > 0 ? 'Tows up to ' + m.tow_rating_lbs.toLocaleString('en-US') + ' lb' : 'Not rated for towing');
+      if (has(m.port)) li.push(m.port + ' charging plug');
+      li.push(has(m.reliability_score)
+        ? 'Reliability ' + m.reliability_score + '/5' + (m.reliability_source ? ' — ' + m.reliability_source : '')
+        : '<span class="unchecked">Reliability not assessed yet</span>');
+
+      var why = CRIT.filter(function (c) { return W[c.id] >= 10; })
+        .sort(function (a, b) { return (W[b.id] * x.s[b.id]) - (W[a.id] * x.s[a.id]); })
+        .slice(0, 3).map(function (c) { return c.label + ' ' + Math.round(x.s[c.id] * 100) + '/100'; }).join(' · ');
+
+      return '<article class="match"><div class="match-rank">' + (i + 1) + '</div><div class="match-body">' +
+        '<h3>' + m.year + ' ' + m.make + ' ' + m.model + '</h3>' +
+        '<div class="match-score">Match ' + Math.round(x.total * 100) + '%</div>' +
+        '<ul class="match-specs"><li>' + li.join('</li><li>') + '</li></ul>' +
+        '<p class="match-why">Scores best on: ' + (why || 'nothing weighted above 10%') + '</p>' +
+        (x.unknown.length ? '<p class="match-src">Scored neutral on ' + x.unknown.join(', ') + ' because we haven\'t checked that for this car yet.</p>' : '') +
+        (m.source_url ? '<p class="match-src">Specs from <a href="' + m.source_url + '" rel="noopener">the manufacturer</a>, checked ' + (m.checked || 'undated') + '</p>' : '') +
+        '</div></article>';
+    }).join('') +
+      '<p class="muted match-foot">Ranked from ' + pool.length + ' versions that passed your filters, showing one trim per model. ' +
+      (currentHome() && currentHome().id === 'none' ? 'Because you have no home charging, fast-charging speed is weighted up and it is worth mapping the chargers near you before choosing a car. ' : '') +
+      'No score replaces a test drive.</p>';
+  }
+
+  el('homeCharge').addEventListener('change', onHome);
+  el('cold').addEventListener('change', rank);
+  ['budget', 'minRange'].forEach(function (id) { el(id).addEventListener('input', rank); });
+  ['bodyPick', 'drivePick', 'controlPref', 'seatsPick', 'towPick', 'portPick'].forEach(function (id) { el(id).addEventListener('change', rank); });
+  el('resetWeights').addEventListener('click', function () { evenWeights(); syncWeights(); rank(); });
+})();
+</script>
+</body>
+</html>
