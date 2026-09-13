@@ -275,13 +275,18 @@
       return vals.length ? [Math.min.apply(null, vals), Math.max.apply(null, vals)] : null;
     };
     var sR = span('range_max_mi'), sK = span('dc_peak_kw'), sP = span('starting_price_usd'), sE = span('kwh_per_100mi_best');
+    var sM = span('dc_10_80_minutes');
 
     var scored = pool.map(function (m) {
       var s = {}, unknown = [];
       s.range = sR && has(m.range_max_mi) ? norm(m.range_max_mi, sR[0], sR[1]) : 0.5;
       s.efficiency = sE && has(m.kwh_per_100mi_best) ? 1 - norm(m.kwh_per_100mi_best, sE[0], sE[1]) : 0.5;
       s.size = body ? (m.body.indexOf(body) !== -1 ? 1 : 0) : 0.5;
-      if (has(m.dc_peak_kw) && sK) { s.charging = norm(m.dc_peak_kw, sK[0], sK[1]); } else { s.charging = 0.5; unknown.push('charging speed'); }
+      if (has(m.dc_peak_kw) && sK) {
+        s.charging = norm(m.dc_peak_kw, sK[0], sK[1]);
+      } else if (has(m.dc_10_80_minutes) && sM) {
+        s.charging = 1 - norm(m.dc_10_80_minutes, sM[0], sM[1]);   // fewer minutes is better
+      } else { s.charging = 0.5; unknown.push('charging speed'); }
       if (has(m.starting_price_usd) && sP) { s.price = 1 - norm(m.starting_price_usd, sP[0], sP[1]); } else { s.price = 0.5; unknown.push('price'); }
       if (has(m.reliability_score)) { s.reliability = norm(m.reliability_score, 1, 5); } else { s.reliability = 0.5; unknown.push('reliability'); }
       if (has(m.controls)) {
@@ -309,7 +314,10 @@
       li.push(has(m.starting_price_usd) ? 'From $' + m.starting_price_usd.toLocaleString('en-US') : '<span class="unchecked">Price not checked yet</span>');
       var r = m.range_max_mi;
       li.push(r ? (r + ' mi EPA range' + (cold ? ' · about ' + winterRange(r) + ' mi in hard cold' : '')) : 'Range not listed');
-      li.push(has(m.dc_peak_kw) ? m.dc_peak_kw + ' kW fast charging' : '<span class="unchecked">Fast-charging speed not checked yet</span>');
+      li.push(has(m.dc_peak_kw)
+        ? m.dc_peak_kw + ' kW fast charging' + (has(m.dc_10_80_minutes) ? ' · ' + m.dc_10_80_minutes + ' min to 80%' : '')
+        : has(m.dc_10_80_minutes) ? m.dc_10_80_minutes + ' min to charge 10-80%'
+        : '<span class="unchecked">Fast-charging speed not checked yet</span>');
       if (m.ac_charge_hours_240v) li.push('About ' + m.ac_charge_hours_240v + ' h to fill on a 240-volt charger');
       li.push(m.body.join(', ') + ' · ' + m.drive.join('/') + (has(m.seats) ? ' · ' + m.seats + ' seats' : ''));
       li.push(has(m.controls) ? 'Controls: ' + m.controls + (m.controls_note ? ' (' + m.controls_note + ')' : '') : '<span class="unchecked">Controls not checked yet</span>');
