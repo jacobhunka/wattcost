@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>Data editor (local only) | Volt &amp; Ledger</title>
+<link rel="stylesheet" href="assets/site.css"/>
+<style>
+  body { background: #F6F5F0; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+  .adminbar { background: #10241B; color: #E9F5EE; padding: 0.6rem 1.25rem; font-size: 0.85rem; }
+  .adminbar strong { color: #FFD84D; }
+  h1 { font-weight: 900; letter-spacing: -0.02em; font-size: 1.8rem; margin-bottom: 0.3rem; }
+  .lede { color: var(--soft); margin-bottom: 1.2rem; max-width: 70ch; }
+  .toolbar { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: flex-end; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 1rem; margin-bottom: 1rem; }
+  .toolbar .field { margin: 0; }
+  .toolbar input, .toolbar select { min-width: 12rem; }
+  .counts { font-size: 0.85rem; color: var(--soft); margin-left: auto; text-align: right; }
+  .btn-primary { background: var(--green); color: #fff; border: none; border-radius: 6px; padding: 0.6rem 1.1rem; font: inherit; font-weight: 700; cursor: pointer; }
+  .btn-primary:hover { background: var(--green-dark); }
+  .btn-primary[disabled] { opacity: 0.45; cursor: default; }
+  .layout { display: grid; grid-template-columns: 320px 1fr; gap: 1rem; align-items: start; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+  .list { background: #fff; border: 1px solid var(--line); border-radius: 10px; max-height: 78vh; overflow-y: auto; }
+  .list button { display: block; width: 100%; text-align: left; background: none; border: none; border-bottom: 1px solid var(--line); padding: 0.55rem 0.8rem; font: inherit; font-size: 0.85rem; cursor: pointer; }
+  .list button:hover { background: #F6F5F0; }
+  .list button[aria-current="true"] { background: #E8F0EB; font-weight: 700; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 0.5rem; vertical-align: middle; }
+  .dot.done { background: var(--green); }
+  .dot.part { background: #E8B33A; }
+  .dot.empty { background: #CFCFC6; }
+  .editor { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 1.3rem; }
+  .editor h2 { font-size: 1.2rem; font-weight: 800; }
+  .epa { font-size: 0.8rem; color: var(--soft); margin: 0.3rem 0 1rem; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+  @media (max-width: 700px) { .grid2 { grid-template-columns: 1fr; } }
+  .editor label { display: block; font-size: 0.78rem; font-weight: 600; margin-bottom: 0.2rem; }
+  .editor input, .editor select, .editor textarea { width: 100%; font: inherit; font-size: 0.9rem; padding: 0.45rem 0.6rem; border: 1px solid var(--line); border-radius: 6px; background: #FDFDFB; }
+  .editor textarea { min-height: 3.4rem; resize: vertical; }
+  .editor .f { margin-bottom: 0.8rem; }
+  .hint2 { font-size: 0.72rem; color: var(--soft); font-weight: 400; }
+  fieldset { border: 1px solid var(--line); border-radius: 8px; padding: 0.9rem; margin-bottom: 1rem; }
+  legend { font-size: 0.8rem; font-weight: 800; padding: 0 0.4rem; }
+  .nhtsa { background: #FBFAF6; border-radius: 6px; padding: 0.7rem 0.9rem; font-size: 0.84rem; margin-bottom: 0.8rem; }
+  .nhtsa a { color: var(--green); }
+  .warn { background: var(--warn-bg); border: 1px solid var(--warn-line); border-radius: 8px; padding: 0.8rem 1rem; font-size: 0.86rem; margin-bottom: 1rem; }
+  .saved { color: var(--green); font-weight: 700; font-size: 0.85rem; }
+</style>
+</head>
+<body>
+<div class="adminbar"><strong>Local editing tool.</strong> This page is for you, not readers. It never uploads anything: you edit here, click Download, and replace data/models.json yourself.</div>
+
+<div class="wrap">
+  <h1>Model data editor</h1>
+  <p class="lede">Open a manufacturer's spec page in another tab, pick the car here, type what it says, and record where you got it. Anything you leave blank shows on the site as "not checked yet" rather than being guessed at.</p>
+
+  <div class="warn" id="loadWarn" style="display:none"></div>
+
+  <div class="toolbar">
+    <div class="field"><label for="q">Search</label><input id="q" type="search" placeholder="ioniq, equinox, R1S…"></div>
+    <div class="field"><label for="filter">Show</label>
+      <select id="filter">
+        <option value="all">All models</option>
+        <option value="empty">Not started</option>
+        <option value="part">Partly done</option>
+        <option value="done">Complete</option>
+      </select>
+    </div>
+    <div class="field"><label for="makeFilter">Make</label><select id="makeFilter"><option value="">Any</option></select></div>
+    <button class="btn-primary" id="download" disabled>Download models.json</button>
+    <div class="counts" id="counts"></div>
+  </div>
+
+  <div class="layout">
+    <div class="list" id="list"></div>
+    <div class="editor" id="editor"><p class="muted">Pick a car from the list.</p></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var payload = null, models = [], currentId = null, dirty = false;
+  var el = function (id) { return document.getElementById(id); };
+  var REQUIRED = ['starting_price_usd', 'dc_peak_kw', 'controls', 'seats', 'reliability_score'];
+
+  fetch('data/models.json', { cache: 'no-cache' })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (d) {
+      payload = d; models = d.models;
+      buildMakes(); renderList(); updateCounts();
+      el('download').disabled = false;
+    })
+    .catch(function (e) {
+      el('loadWarn').style.display = 'block';
+      el('loadWarn').innerHTML = "<strong>Couldn't load data/models.json.</strong> Open this page through a local server, not by double-clicking: run <code>python3 -m http.server --bind 127.0.0.1</code> in the site folder, then visit <code>http://127.0.0.1:8000/admin.html</code>.";
+    });
+
+  function status(m) {
+    var filled = REQUIRED.filter(function (f) { return m[f] !== null && m[f] !== undefined; }).length;
+    return filled === REQUIRED.length ? 'done' : filled > 0 ? 'part' : 'empty';
+  }
+  function updateCounts() {
+    var d = models.filter(function (m) { return status(m) === 'done'; }).length;
+    var p = models.filter(function (m) { return status(m) === 'part'; }).length;
+    el('counts').innerHTML = '<strong>' + d + '</strong> complete · ' + p + ' partly done · ' + (models.length - d - p) + ' not started' +
+      (dirty ? '<br><span class="saved">Unsaved changes — click Download</span>' : '');
+  }
+  function buildMakes() {
+    var makes = [];
+    models.forEach(function (m) { if (makes.indexOf(m.make) === -1) makes.push(m.make); });
+    makes.sort().forEach(function (mk) {
+      var o = document.createElement('option'); o.value = mk; o.textContent = mk; el('makeFilter').appendChild(o);
+    });
+  }
+  function renderList() {
+    var q = el('q').value.toLowerCase(), f = el('filter').value, mk = el('makeFilter').value;
+    var rows = models.filter(function (m) {
+      if (mk && m.make !== mk) return false;
+      if (f !== 'all' && status(m) !== f) return false;
+      return !q || (m.make + ' ' + m.model + ' ' + m.year).toLowerCase().indexOf(q) !== -1;
+    });
+    el('list').innerHTML = rows.length
+      ? rows.map(function (m) {
+          return '<button data-id="' + m.id + '"' + (m.id === currentId ? ' aria-current="true"' : '') + '>' +
+            '<span class="dot ' + status(m) + '"></span>' + m.year + ' ' + m.make + ' ' + m.model + '</button>';
+        }).join('')
+      : '<p class="muted" style="padding:0.8rem">Nothing matches.</p>';
+  }
+
+  // One delegated handler, so rebuilding the list never leaves dead buttons behind.
+  el('list').addEventListener('click', function (e) {
+    var btn = e.target.closest('button[data-id]');
+    if (!btn) return;
+    currentId = btn.dataset.id;
+    renderList(); renderEditor();
+  });
+
+  function field(label, key, type, hint, opts) {
+    var m = models.find(function (x) { return x.id === currentId; });
+    var v = m[key] === null || m[key] === undefined ? '' : m[key];
+    var input;
+    if (type === 'select') {
+      input = '<select data-key="' + key + '"><option value="">Not set</option>' +
+        opts.map(function (o) { return '<option value="' + o + '"' + (String(v) === String(o) ? ' selected' : '') + '>' + o + '</option>'; }).join('') + '</select>';
+    } else if (type === 'textarea') {
+      input = '<textarea data-key="' + key + '">' + String(v).replace(/</g, '&lt;') + '</textarea>';
+    } else {
+      input = '<input data-key="' + key + '" type="' + type + '" value="' + String(v).replace(/"/g, '&quot;') + '">';
+    }
+    return '<div class="f"><label>' + label + (hint ? ' <span class="hint2">' + hint + '</span>' : '') + '</label>' + input + '</div>';
+  }
+
+  function renderEditor() {
+    var m = models.find(function (x) { return x.id === currentId; });
+    if (!m) return;
+    var nh = m.nhtsa_checked
+      ? '<div class="nhtsa"><strong>NHTSA, checked ' + m.nhtsa_checked + ':</strong> ' + m.nhtsa_recalls + ' recalls, ' + m.nhtsa_complaints + ' complaints' +
+        (m.nhtsa_recall_url ? ' · <a href="' + m.nhtsa_recall_url + '" target="_blank" rel="noopener">recalls</a>' : '') +
+        (m.nhtsa_complaint_url ? ' · <a href="' + m.nhtsa_complaint_url + '" target="_blank" rel="noopener">complaints</a>' : '') +
+        '<br><span class="hint2">Counts are not a rating. Popular cars collect more complaints. Use these plus your own reading to set the score below.</span></div>'
+      : '<div class="nhtsa"><strong>No NHTSA data yet.</strong> Run <code>python3 tools/fetch_nhtsa.py</code> to fill recall and complaint counts.' +
+        (m.nhtsa_lookup_failed ? ' <br>The last lookup found nothing under the guessed name. Set the NHTSA model name below and run it again.' : '') + '</div>';
+
+    el('editor').innerHTML =
+      '<h2>' + m.year + ' ' + m.make + ' ' + m.model + '</h2>' +
+      '<p class="epa">From EPA: ' + (m.range_max_mi ? m.range_max_mi + ' mi range · ' : '') +
+        (m.kwh_per_100mi_best ? Math.round(m.kwh_per_100mi_best) + ' kWh/100 mi · ' : '') +
+        m.body.join(', ') + ' · ' + m.drive.join('/') + ' · ' + m.trims + ' EPA trim(s)</p>' +
+      nh +
+      '<fieldset><legend>From the manufacturer&rsquo;s spec page</legend>' +
+        '<div class="grid2">' +
+          field('Starting price (USD)', 'starting_price_usd', 'number', 'base MSRP, excluding destination') +
+          field('Seats', 'seats', 'number') +
+          field('DC fast charging peak (kW)', 'dc_peak_kw', 'number', 'leave blank if not published') +
+          field('DC 10-80% (minutes)', 'dc_10_80_minutes', 'number', 'used when kW is unknown') +
+          field('Cargo behind rear seats (cu ft)', 'cargo_cu_ft', 'number') +
+          field('Tow rating (lb)', 'tow_rating_lbs', 'number', '0 if it cannot tow') +
+          field('Charging plug', 'port', 'select', '', ['NACS', 'CCS']) +
+          field('Heat pump', 'heat_pump', 'select', 'matters in cold climates', ['true', 'false']) +
+        '</div>' +
+        field('Spec page URL', 'source_url', 'url', 'the manufacturer page, not an aggregator') +
+        field('Date checked', 'checked', 'date') +
+      '</fieldset>' +
+      '<fieldset><legend>Dashboard controls</legend>' +
+        '<div class="grid2">' +
+          field('Rating', 'controls', 'select', '', ['buttons', 'mixed', 'touchscreen']) +
+          '<div class="f"><label>Rubric <span class="hint2">keep it consistent</span></label>' +
+          '<div class="hint2" style="padding-top:0.3rem"><strong>buttons</strong>: physical temperature, fan and volume.<br><strong>mixed</strong>: some physical, rest on screen.<br><strong>touchscreen</strong>: climate entirely on screen.</div></div>' +
+        '</div>' +
+        field('What you saw', 'controls_note', 'textarea', 'e.g. "physical climate knobs and volume knob; nav on screen"') +
+      '</fieldset>' +
+      '<fieldset><legend>Reliability (your judgment, not a copied rating)</legend>' +
+        '<div class="grid2">' +
+          field('Score 1-5', 'reliability_score', 'select', '5 = excellent', [1, 2, 3, 4, 5]) +
+          field('NHTSA model name', 'nhtsa_model', 'text', 'only if the automatic lookup failed') +
+        '</div>' +
+        field('What it is based on', 'reliability_source', 'textarea', 'e.g. "2 recalls, 14 complaints, plus Consumer Reports Feb 2026 predicted reliability"') +
+        field('Link for readers', 'reliability_url', 'url', 'NHTSA page or your own write-up') +
+      '</fieldset>';
+
+    [].forEach.call(el('editor').querySelectorAll('[data-key]'), function (inp) {
+      inp.addEventListener('change', function () {
+        var key = inp.dataset.key, raw = inp.value.trim();
+        var val;
+        if (raw === '') val = null;
+        else if (inp.type === 'number') val = Number(raw);
+        else if (raw === 'true' || raw === 'false') val = raw === 'true';
+        else if (key === 'reliability_score') val = Number(raw);
+        else val = raw;
+        m[key] = val;
+        dirty = true;
+        renderList(); updateCounts();
+      });
+    });
+  }
+
+  el('download').addEventListener('click', function () {
+    payload.models = models;
+    payload.updated = new Date().toISOString().slice(0, 10);
+    var blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = 'models.json';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    dirty = false; updateCounts();
+  });
+  // Search reacts to typing only. Binding 'change' as well would rebuild the list
+  // when the box loses focus, which removes the button mid-click and swallows it.
+  el('q').addEventListener('input', renderList);
+  el('filter').addEventListener('change', renderList);
+  el('makeFilter').addEventListener('change', renderList);
+  window.addEventListener('beforeunload', function (e) { if (dirty) { e.preventDefault(); e.returnValue = ''; } });
+})();
+</script>
+</body>
+</html>

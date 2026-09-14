@@ -30,6 +30,8 @@ data/carbon.json            Grid emissions by state (EPA eGRID2023), IPCC source
                             factors, ICCT battery factors, EPA gasoline and tree factors
 tools/build_evs_from_epa.py Turns EPA's download into data/evs.json
 tools/build_models_from_epa.py  Turns EPA's download into data/models.json
+tools/fetch_nhtsa.py        Fills recall and complaint counts from NHTSA's free API
+admin.html                  Local-only editor for filling in model data (not for readers)
 robots.txt                  Tells search engines they may index the site
 sitemap.xml                 List of pages for search engines
 ```
@@ -103,6 +105,44 @@ Rules that keep this defensible:
 
 Re-running `python3 tools/build_models_from_epa.py` keeps everything you've typed and
 only refreshes the EPA fields.
+
+### The easy way: admin.html
+
+Don't hand-edit the JSON. Use the editor instead:
+
+1. Start the local server: `python3 -m http.server --bind 127.0.0.1`
+2. Open `http://127.0.0.1:8000/admin.html`
+3. Search for a car, click it, type what the manufacturer's spec page says.
+4. Click **Download models.json** and replace `data/models.json` with the file.
+5. Commit and push.
+
+The editor never uploads anything. A coloured dot shows each car's state: grey for
+not started, amber for partly done, green for complete. The counter at the top right
+tracks your progress, and the "Show" menu filters to what still needs work.
+
+`admin.html` ships with the site but is excluded in robots.txt and left out of the
+sitemap. If you'd rather it never reach the server at all, delete it before pushing
+and keep a local copy.
+
+### Recall and complaint counts
+
+Run `python3 tools/fetch_nhtsa.py` to pull recall and complaint counts from NHTSA's
+free public API (no key needed). Useful flags:
+
+```
+python3 tools/fetch_nhtsa.py --make Hyundai     # one make
+python3 tools/fetch_nhtsa.py --limit 20         # first 20 unchecked models
+python3 tools/fetch_nhtsa.py --refresh          # re-check ones already done
+```
+
+The counts then appear in admin.html beside the reliability field, with links to the
+NHTSA pages. The script deliberately does NOT set reliability_score: counts are not a
+rating, because a car that sold 200,000 units collects more complaints than one that
+sold 5,000 however well it was built. Read the counts, read the recall summaries, then
+set the 1-to-5 score yourself and write down what it was based on.
+
+If a lookup finds nothing, EPA and NHTSA probably spell the model differently. Set the
+"NHTSA model name" field in admin.html for that car and run the script again.
 
 ## Preview on your computer
 

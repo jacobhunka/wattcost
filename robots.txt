@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /admin.html
 
 Sitemap: https://REPLACE-WITH-YOUR-DOMAIN.com/sitemap.xml
