@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-20",
+  "updated": "2026-09-21",
   "model_years": "2026 and newer",
   "epa_source_url": "https://www.fueleconomy.gov/feg/ws/",
   "manual_fields": [
@@ -4709,8 +4709,7 @@
       "source_url": null,
       "checked": null,
       "controls_source": null,
-      "controls_url": null,
-      "nhtsa_lookup_failed": true
+      "controls_url": null
     },
     {
       "id": "2027-kia-ev3-long-range-fwd",
@@ -4745,8 +4744,7 @@
       "source_url": null,
       "checked": null,
       "controls_source": null,
-      "controls_url": null,
-      "nhtsa_lookup_failed": true
+      "controls_url": null
     },
     {
       "id": "2027-kia-ev3-long-range-gt-awd",
@@ -4781,8 +4779,7 @@
       "source_url": null,
       "checked": null,
       "controls_source": null,
-      "controls_url": null,
-      "nhtsa_lookup_failed": true
+      "controls_url": null
     },
     {
       "id": "2027-kia-ev3-standard-range-fwd",
@@ -4817,8 +4814,7 @@
       "source_url": null,
       "checked": null,
       "controls_source": null,
-      "controls_url": null,
-      "nhtsa_lookup_failed": true
+      "controls_url": null
     },
     {
       "id": "2026-kia-ev6-awd-gt",
@@ -4853,8 +4849,7 @@
       "source_url": null,
       "checked": null,
       "controls_source": null,
-      "controls_url": null,
-      "nhtsa_lookup_failed": true
+      "controls_url": null
     },
     {
       "id": "2026-kia-ev6-long-range-awd",
@@ -4889,8 +4884,7 @@
       "source_url": "https://www.kiamedia.com/us/en/media/pressreleases/24658/kia-announces-pricing-for-2026-ev6",
       "checked": "2026-09-16",
       "controls_source": null,
-      "controls_url": null,
-      "nhtsa_lookup_failed": true
+      "controls_url": null
     },
     {
       "id": "2026-kia-ev6-long-range-rwd",
@@ -4925,8 +4919,7 @@
       "source_url": "https://www.kiamedia.com/us/en/media/pressreleases/24658/kia-announces-pricing-for-2026-ev6",
       "checked": "2026-09-16",
       "controls_source": null,
-      "controls_url": null,
-      "nhtsa_lookup_failed": true
+      "controls_url": null
     },
     {
       "id": "2026-kia-ev6-standard-range-rwd",
@@ -4961,8 +4954,7 @@
       "source_url": "https://www.kiamedia.com/us/en/media/pressreleases/24658/kia-announces-pricing-for-2026-ev6",
       "checked": "2026-09-16",
       "controls_source": null,
-      "controls_url": null,
-      "nhtsa_lookup_failed": true
+      "controls_url": null
     },
     {
       "id": "2026-kia-ev9-gt",
@@ -4991,9 +4983,9 @@
       "tow_rating_lbs": null,
       "port": null,
       "heat_pump": null,
-      "reliability_score": null,
-      "reliability_source": null,
-      "reliability_url": null,
+      "reliability_score": 3,
+      "reliability_source": "NHTSA, 2025 EV9: 4 recalls, 12 complaints. Rubric base 2 (4 recalls), +1 because 12 complaints over a full model year is low. Cross-check, 2026 EV9: 2 recalls so far (base 3), no complaints on file yet. Both routes give 3.",
+      "reliability_url": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=Kia&model=EV9&modelYear=2025",
       "source_url": null,
       "checked": null,
       "controls_source": null,
@@ -5036,9 +5028,9 @@
       "tow_rating_lbs": 3500,
       "port": "NACS",
       "heat_pump": null,
-      "reliability_score": null,
-      "reliability_source": null,
-      "reliability_url": null,
+      "reliability_score": 3,
+      "reliability_source": "NHTSA, 2025 EV9: 4 recalls, 12 complaints. Rubric base 2 (4 recalls), +1 because 12 complaints over a full model year is low. Cross-check, 2026 EV9: 2 recalls so far (base 3), no complaints on file yet. Both routes give 3.",
+      "reliability_url": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=Kia&model=EV9&modelYear=2025",
       "source_url": "https://www.kia.com/us/en/ev9/specs-compare",
       "checked": "2026-09-20",
       "controls_source": null,
@@ -5082,9 +5074,9 @@
       "tow_rating_lbs": 5000,
       "port": "NACS",
       "heat_pump": null,
-      "reliability_score": null,
-      "reliability_source": null,
-      "reliability_url": null,
+      "reliability_score": 3,
+      "reliability_source": "NHTSA, 2025 EV9: 4 recalls, 12 complaints. Rubric base 2 (4 recalls), +1 because 12 complaints over a full model year is low. Cross-check, 2026 EV9: 2 recalls so far (base 3), no complaints on file yet. Both routes give 3.",
+      "reliability_url": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=Kia&model=EV9&modelYear=2025",
       "source_url": "https://www.kia.com/us/en/ev9/specs-compare",
       "checked": "2026-09-20",
       "controls_source": null,
@@ -5128,9 +5120,9 @@
       "tow_rating_lbs": 2000,
       "port": "NACS",
       "heat_pump": null,
-      "reliability_score": null,
-      "reliability_source": null,
-      "reliability_url": null,
+      "reliability_score": 3,
+      "reliability_source": "NHTSA, 2025 EV9: 4 recalls, 12 complaints. Rubric base 2 (4 recalls), +1 because 12 complaints over a full model year is low. Cross-check, 2026 EV9: 2 recalls so far (base 3), no complaints on file yet. Both routes give 3.",
+      "reliability_url": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=Kia&model=EV9&modelYear=2025",
       "source_url": "https://www.kia.com/us/en/ev9/specs-compare",
       "checked": "2026-09-20",
       "controls_source": null,
@@ -5174,9 +5166,9 @@
       "tow_rating_lbs": 2000,
       "port": "NACS",
       "heat_pump": null,
-      "reliability_score": null,
-      "reliability_source": null,
-      "reliability_url": null,
+      "reliability_score": 3,
+      "reliability_source": "NHTSA, 2025 EV9: 4 recalls, 12 complaints. Rubric base 2 (4 recalls), +1 because 12 complaints over a full model year is low. Cross-check, 2026 EV9: 2 recalls so far (base 3), no complaints on file yet. Both routes give 3.",
+      "reliability_url": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=Kia&model=EV9&modelYear=2025",
       "source_url": "https://www.kia.com/us/en/ev9/specs-compare",
       "checked": "2026-09-20",
       "controls_source": null,
@@ -5226,8 +5218,7 @@
       "source_url": null,
       "checked": null,
       "controls_source": null,
-      "controls_url": null,
-      "nhtsa_lookup_failed": true
+      "controls_url": null
     },
     {
       "id": "2026-lexus-es-350e",
@@ -11672,6 +11663,5 @@
       "controls_source": null,
       "controls_url": null
     }
-  ],
-  "nhtsa_note": "Recall and complaint counts from NHTSA's free public API. Counts are not a reliability rating: popular models collect more complaints regardless of build quality, and NHTSA publishes no sales figures to correct for it. Source: https://www.nhtsa.gov/nhtsa-datasets-and-apis"
+  ]
 }

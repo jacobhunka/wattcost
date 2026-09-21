@@ -87,8 +87,17 @@ def count_for(url_template, make, model, year):
     time.sleep(PAUSE_SECONDS)
     try:
         data = get_json(url)
-    except (HTTPError, URLError, ValueError, TimeoutError) as e:
+    except HTTPError as e:
+        # NHTSA answers 400 when it has nothing on file for that exact
+        # make/model/year. That can mean "none filed yet" OR "wrong name",
+        # so it is recorded as unknown (None), never as zero.
+        if e.code != 400:
+            print(f"    lookup failed ({e})")
+        _CACHE[url] = None
+        return None, url
+    except (URLError, ValueError, TimeoutError) as e:
         print(f"    lookup failed ({e})")
+        _CACHE[url] = None
         return None, url
     results = data.get("results")
     n = len(results) if isinstance(results, list) else None
@@ -137,10 +146,15 @@ def main():
             p_recalls, p_recall_url = count_for(RECALLS, m["make"], name, prev)
             p_complaints, p_complaint_url = count_for(COMPLAINTS, m["make"], name, prev)
 
-            if recalls is None and complaints is None:
+            def show(n):
+                return "none on file" if n is None else str(n)
+            print(f"    {m['year']}: recalls {show(recalls)}, complaints {show(complaints)}   |   "
+                  f"{prev}: recalls {show(p_recalls)}, complaints {show(p_complaints)}")
+
+            if all(x is None for x in (recalls, complaints, p_recalls, p_complaints)):
                 m["nhtsa_lookup_failed"] = True
                 failed += 1
-                print("    no result. Set \"nhtsa_model\" for this car in admin.html and run again.")
+                print("    nothing on file for either year. The name may be wrong, or the car is too new.")
                 continue
 
             m.pop("nhtsa_lookup_failed", None)
@@ -155,8 +169,6 @@ def main():
             m["nhtsa_prev_recall_url"] = p_recall_url
             m["nhtsa_checked"] = date.today().isoformat()
             done += 1
-            print(f"    {m['year']}: {recalls} recalls, {complaints} complaints   |   "
-                  f"{prev}: {p_recalls} recalls, {p_complaints} complaints")
     except KeyboardInterrupt:
         print("\nStopped. Saving what was collected so far.")
 
