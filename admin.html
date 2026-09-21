@@ -189,8 +189,19 @@
           '<div class="hint2" style="padding-top:0.3rem"><strong>buttons</strong>: physical temperature, fan and volume.<br><strong>mixed</strong>: some physical, rest on screen.<br><strong>touchscreen</strong>: climate entirely on screen.</div></div>' +
         '</div>' +
         field('What you saw', 'controls_note', 'textarea', 'e.g. "physical climate knobs and volume knob; nav on screen"') +
+        '<div class="grid2">' +
+          field('Source, if not you personally', 'controls_source', 'text', 'e.g. a review you read or watched') +
+          field('Link for readers', 'controls_url', 'url', 'optional') +
+        '</div>' +
       '</fieldset>' +
       '<fieldset><legend>Reliability (your judgment, not a copied rating)</legend>' +
+        '<div class="nhtsa"><strong>House rubric.</strong> Start from recall count, because a recall is a ' +
+        'confirmed defect rather than an owner report: <strong>0 recalls = 5 · 1 = 4 · 2-3 = 3 · 4-5 = 2 · 6+ = 1</strong>. ' +
+        'Then move it one step up or down if complaints are clearly low or high for a car selling in that kind of volume, ' +
+        'and say why in the box below. Use the newest model year that has been on sale at least six months — ' +
+        'a brand-new year with no history is not a 5.' +
+        '<br><span class="hint2">Write the model year you scored, both counts, and any adjustment into ' +
+        '"What it is based on" so a reader can re-check it.</span></div>' +
         '<div class="grid2">' +
           field('Score 1-5', 'reliability_score', 'select', '5 = excellent', [1, 2, 3, 4, 5]) +
           field('NHTSA model name', 'nhtsa_model', 'text', 'only if the automatic lookup failed') +

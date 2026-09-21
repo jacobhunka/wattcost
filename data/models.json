@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-13",
+  "updated": "2026-09-20",
   "model_years": "2026 and newer",
   "epa_source_url": "https://www.fueleconomy.gov/feg/ws/",
   "manual_fields": [
@@ -52,7 +52,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-acura-zdx-awd-type-s",
@@ -85,7 +87,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-acura-zdx-rwd",
@@ -118,7 +122,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-audi-a6-e-tron",
@@ -151,7 +157,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-audi-a6-e-tron-quattro",
@@ -184,7 +192,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-audi-a6-e-tron-quattro-ultra",
@@ -217,7 +227,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-audi-a6-e-tron-ultra",
@@ -250,7 +262,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-audi-q4-45-e-tron",
@@ -283,7 +297,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-audi-q4-55-e-tron-quattro",
@@ -316,7 +332,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-audi-q4-sportback-55-e-tron-quattro",
@@ -349,7 +367,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-audi-q6-e-tron-quattro",
@@ -382,7 +402,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-audi-q6-e-tron-sb-quattro",
@@ -415,7 +437,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-audi-q6-sportback-e-tron-quattro",
@@ -448,7 +472,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-audi-rs-e-tron-gt-performance",
@@ -481,7 +507,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-audi-rs-e-tron-gt-performance",
@@ -514,7 +542,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-audi-s-e-tron-gt",
@@ -547,7 +577,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-audi-s-e-tron-gt",
@@ -580,7 +612,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-audi-s6-e-tron",
@@ -613,7 +647,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-audi-sq6-e-tron",
@@ -646,7 +682,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-audi-sq6-sportback-e-tron",
@@ -679,7 +717,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-bmw-i4-edrive35-gran-coupe",
@@ -712,7 +752,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-bmw-i4-edrive40-gran-coupe",
@@ -745,7 +787,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-bmw-i4-m60-xdrive-gran-coupe",
@@ -778,7 +822,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-bmw-i4-xdrive40-gran-coupe",
@@ -811,7 +857,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-bmw-i5-edrive40-sedan",
@@ -844,7 +892,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-bmw-i5-edrive40-sedan",
@@ -877,7 +927,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-bmw-i5-m60-xdrive-sedan",
@@ -910,7 +962,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-bmw-i5-xdrive40-sedan",
@@ -943,7 +997,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-bmw-i5-xdrive40-sedan",
@@ -976,7 +1032,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-bmw-i7-edrive50-sedan",
@@ -1009,7 +1067,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-bmw-i7-m70-xdrive-sedan",
@@ -1042,7 +1102,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-bmw-i7-xdrive50-sedan",
@@ -1075,7 +1137,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-bmw-i7-xdrive60-sedan",
@@ -1108,7 +1172,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-bmw-i7-xdrive60-sedan",
@@ -1141,7 +1207,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-bmw-ix-m70",
@@ -1174,7 +1242,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-bmw-ix-xdrive45",
@@ -1207,7 +1277,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-bmw-ix-xdrive60",
@@ -1240,7 +1312,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-bmw-ix3-50-xdrive",
@@ -1273,7 +1347,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-bugatti-rimac-nevera-r",
@@ -1306,7 +1382,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-cadillac-celestiq",
@@ -1339,7 +1417,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-cadillac-lyriq",
@@ -1372,7 +1452,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-cadillac-lyriq-11kw-charger",
@@ -1405,7 +1487,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-cadillac-lyriq-19kw-charger",
@@ -1438,7 +1522,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-cadillac-lyriq-awd",
@@ -1471,7 +1557,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-cadillac-lyriq-awd-11kw-charger",
@@ -1504,7 +1592,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-cadillac-lyriq-awd-19kw-charger",
@@ -1537,7 +1627,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-cadillac-lyriq-awd-v-series-11kw-charger",
@@ -1570,7 +1662,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-cadillac-lyriq-awd-v-series-19kw-charger",
@@ -1603,7 +1697,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-cadillac-lyriq-pawd",
@@ -1636,7 +1732,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-cadillac-lyriq-pawd-v-series",
@@ -1669,7 +1767,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-cadillac-optiq-awd",
@@ -1702,7 +1802,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-cadillac-optiq-awd-11kw-charger",
@@ -1735,7 +1837,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-cadillac-optiq-awd-19kw-charger",
@@ -1768,7 +1872,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-cadillac-optiq-awd-v-series-11-kw-charger",
@@ -1801,7 +1907,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-cadillac-optiq-awd-v-series-11kw-charger",
@@ -1834,7 +1942,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-cadillac-optiq-awd-v-series-19-kw-charger",
@@ -1867,7 +1977,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-cadillac-optiq-awd-v-series-19kw-charger",
@@ -1900,7 +2012,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-cadillac-optiq-rwd",
@@ -1933,7 +2047,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-cadillac-optiq-rwd-11kw-charger",
@@ -1966,7 +2082,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-cadillac-optiq-rwd-19kw-charger",
@@ -1999,7 +2117,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-cadillac-vistiq",
@@ -2032,7 +2152,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-cadillac-vistiq-11kw-charger",
@@ -2065,7 +2187,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-cadillac-vistiq-19kw-charger",
@@ -2098,7 +2222,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-chevrolet-blazer-ev-awd",
@@ -2131,7 +2257,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-chevrolet-blazer-ev-awd",
@@ -2164,7 +2292,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-chevrolet-blazer-ev-awd-ss",
@@ -2197,7 +2327,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-chevrolet-blazer-ev-awd-ss",
@@ -2230,7 +2362,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-chevrolet-blazer-ev-fwd",
@@ -2263,7 +2397,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-chevrolet-blazer-ev-fwd",
@@ -2296,7 +2432,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-chevrolet-blazer-ev-fwd-22-inch-tire",
@@ -2329,7 +2467,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-chevrolet-blazer-ev-fwd-22-inch-tire",
@@ -2362,7 +2502,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-chevrolet-bolt",
@@ -2384,8 +2526,8 @@
       "starting_price_usd": null,
       "dc_peak_kw": null,
       "dc_10_80_minutes": null,
-      "controls": null,
-      "controls_note": null,
+      "controls": "buttons",
+      "controls_note": "Physical buttons for climate, the gear selector and the wipers.",
       "seats": null,
       "cargo_cu_ft": null,
       "tow_rating_lbs": null,
@@ -2395,7 +2537,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": "Video reviews from Edmunds and Car and Driver, via nexusEVnews video-review coverage (May and July 2026)",
+      "controls_url": null
     },
     {
       "id": "2026-chevrolet-equinox-ev-awd",
@@ -2428,7 +2572,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": "https://www.chevrolet.com/electric/previous-year/equinox-ev",
-      "checked": "2026-09-14"
+      "checked": "2026-09-14",
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-chevrolet-equinox-ev-awd",
@@ -2461,7 +2607,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-chevrolet-equinox-ev-fwd",
@@ -2494,7 +2642,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": "https://www.chevrolet.com/electric/previous-year/equinox-ev",
-      "checked": "2026-09-14"
+      "checked": "2026-09-14",
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-chevrolet-silverado-ev-ext-range",
@@ -2527,7 +2677,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-chevrolet-silverado-ev-ext-range-wt",
@@ -2560,7 +2712,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-chevrolet-silverado-ev-max-range-wt",
@@ -2593,7 +2747,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-chevrolet-silverado-ev-std-range",
@@ -2626,7 +2782,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-chevrolet-silverado-ev-std-range-wt",
@@ -2659,7 +2817,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-dodge-charger-daytona-r-t-awd-245-55zr18",
@@ -2692,7 +2852,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-dodge-charger-daytona-r-t-awd-255-45r20",
@@ -2725,7 +2887,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-dodge-charger-daytona-r-t-awd-275-40r20",
@@ -2758,7 +2922,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-dodge-charger-daytona-r-t-awd-305-35zr20",
@@ -2791,7 +2957,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-dodge-charger-daytona-scat-pack-awd-305-35zr20",
@@ -2824,7 +2992,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-dodge-charger-daytona-scat-pack-awd-305-35zr20",
@@ -2857,7 +3027,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-dodge-charger-daytona-scat-pack-awd-325-35zr20-rear",
@@ -2890,7 +3062,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-dodge-charger-daytona-scat-pack-awd-325-35zr20-rear",
@@ -2923,7 +3097,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-dodge-charger-daytona-scat-pack-awd-325-35zr20-rear-a-s",
@@ -2956,7 +3132,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-dodge-charger-daytona-scat-pack-awd-325-35zr20-rear-a-s",
@@ -2989,7 +3167,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-fiat-500e",
@@ -3022,7 +3202,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-fiat-500e-all-season",
@@ -3055,7 +3237,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-ford-mustang-mach-e-awd",
@@ -3088,7 +3272,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": "https://www.ford.com/suvs/mach-e/",
-      "checked": "2026-09-14"
+      "checked": "2026-09-14",
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-ford-mustang-mach-e-awd-extended",
@@ -3121,7 +3307,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": "https://www.ford.com/suvs/mach-e/",
-      "checked": "2026-09-14"
+      "checked": "2026-09-14",
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-ford-mustang-mach-e-gt",
@@ -3154,7 +3342,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": "https://www.ford.com/suvs/mach-e/",
-      "checked": "2026-09-14"
+      "checked": "2026-09-14",
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-ford-mustang-mach-e-rally",
@@ -3187,7 +3377,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": "https://www.ford.com/suvs/mach-e/",
-      "checked": "2026-09-14"
+      "checked": "2026-09-14",
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-ford-mustang-mach-e-rwd",
@@ -3220,7 +3412,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": "https://www.ford.com/suvs/mach-e/",
-      "checked": "2026-09-14"
+      "checked": "2026-09-14",
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-ford-mustang-mach-e-rwd-extended",
@@ -3253,7 +3447,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": "https://www.ford.com/suvs/mach-e/",
-      "checked": "2026-09-14"
+      "checked": "2026-09-14",
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-genesis-electrified-g80",
@@ -3286,7 +3482,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-genesis-electrified-gv70-awd",
@@ -3319,7 +3517,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-genesis-electrified-gv70-awd",
@@ -3352,7 +3552,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-genesis-gv60-awd",
@@ -3385,7 +3587,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-genesis-gv60-awd",
@@ -3418,7 +3622,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-genesis-gv60-awd-advanced",
@@ -3451,7 +3657,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-genesis-gv60-awd-performance",
@@ -3484,7 +3692,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-genesis-gv60-awd-prestige",
@@ -3517,7 +3727,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-genesis-gv60-magma",
@@ -3550,7 +3762,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-genesis-gv60-rwd",
@@ -3583,7 +3797,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-genesis-gv60-rwd",
@@ -3616,7 +3832,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-gmc-sierra-ev-ext-range",
@@ -3649,7 +3867,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-gmc-sierra-ev-std-range",
@@ -3682,7 +3902,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-honda-prologue-awd-elite",
@@ -3715,7 +3937,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-honda-prologue-awd-touring",
@@ -3748,7 +3972,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-honda-prologue-fwd",
@@ -3781,7 +4007,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-hyundai-ioniq-5-awd",
@@ -3814,7 +4042,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-hyundai-ioniq-5-awd",
@@ -3847,7 +4077,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-hyundai-ioniq-5-awd-xrt",
@@ -3880,7 +4112,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": "https://www.hyundaiusa.com/us/en/vehicles/ioniq-5/compare-specs",
-      "checked": "2026-09-13"
+      "checked": "2026-09-13",
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-hyundai-ioniq-5-awd-xrt",
@@ -3913,7 +4147,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-hyundai-ioniq-5-n",
@@ -3946,7 +4182,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-hyundai-ioniq-5-robo-taxi",
@@ -3979,7 +4217,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-hyundai-ioniq-5-rwd",
@@ -4012,7 +4252,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": "https://www.hyundaiusa.com/us/en/vehicles/ioniq-5/compare-specs",
-      "checked": "2026-09-13"
+      "checked": "2026-09-13",
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-hyundai-ioniq-5-rwd",
@@ -4045,7 +4287,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-hyundai-ioniq-5-standard-range",
@@ -4078,7 +4322,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": "https://www.hyundaiusa.com/us/en/vehicles/ioniq-5/compare-specs",
-      "checked": "2026-09-13"
+      "checked": "2026-09-13",
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-hyundai-ioniq-5-standard-range",
@@ -4111,7 +4357,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-hyundai-ioniq-6-n",
@@ -4144,7 +4392,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-hyundai-ioniq-9-awd",
@@ -4177,7 +4427,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-hyundai-ioniq-9-awd",
@@ -4210,7 +4462,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-hyundai-ioniq-9-awd-performance",
@@ -4243,7 +4497,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-hyundai-ioniq-9-awd-performance",
@@ -4276,7 +4532,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-hyundai-ioniq-9-rwd",
@@ -4309,7 +4567,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-hyundai-ioniq-9-rwd",
@@ -4342,7 +4602,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-jeep-recon-moab-4wd",
@@ -4375,7 +4637,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-jeep-wagoneer-s-awd",
@@ -4408,7 +4672,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-kia-ev3-long-range-awd",
@@ -4441,7 +4707,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-kia-ev3-long-range-fwd",
@@ -4474,7 +4742,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-kia-ev3-long-range-gt-awd",
@@ -4507,7 +4777,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-kia-ev3-standard-range-fwd",
@@ -4540,7 +4812,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-kia-ev6-awd-gt",
@@ -4573,7 +4847,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-kia-ev6-long-range-awd",
@@ -4592,7 +4868,7 @@
       ],
       "ac_charge_hours_240v": 8.8,
       "epa_source": "EPA fueleconomy.gov vehicles.csv",
-      "starting_price_usd": null,
+      "starting_price_usd": 45200,
       "dc_peak_kw": null,
       "dc_10_80_minutes": null,
       "controls": null,
@@ -4605,8 +4881,10 @@
       "reliability_score": null,
       "reliability_source": null,
       "reliability_url": null,
-      "source_url": null,
-      "checked": null
+      "source_url": "https://www.kiamedia.com/us/en/media/pressreleases/24658/kia-announces-pricing-for-2026-ev6",
+      "checked": "2026-09-16",
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-kia-ev6-long-range-rwd",
@@ -4625,7 +4903,7 @@
       ],
       "ac_charge_hours_240v": 9,
       "epa_source": "EPA fueleconomy.gov vehicles.csv",
-      "starting_price_usd": null,
+      "starting_price_usd": 41200,
       "dc_peak_kw": null,
       "dc_10_80_minutes": null,
       "controls": null,
@@ -4638,8 +4916,10 @@
       "reliability_score": null,
       "reliability_source": null,
       "reliability_url": null,
-      "source_url": null,
-      "checked": null
+      "source_url": "https://www.kiamedia.com/us/en/media/pressreleases/24658/kia-announces-pricing-for-2026-ev6",
+      "checked": "2026-09-16",
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-kia-ev6-standard-range-rwd",
@@ -4658,7 +4938,7 @@
       ],
       "ac_charge_hours_240v": 6.2,
       "epa_source": "EPA fueleconomy.gov vehicles.csv",
-      "starting_price_usd": null,
+      "starting_price_usd": 37900,
       "dc_peak_kw": null,
       "dc_10_80_minutes": null,
       "controls": null,
@@ -4671,8 +4951,10 @@
       "reliability_score": null,
       "reliability_source": null,
       "reliability_url": null,
-      "source_url": null,
-      "checked": null
+      "source_url": "https://www.kiamedia.com/us/en/media/pressreleases/24658/kia-announces-pricing-for-2026-ev6",
+      "checked": "2026-09-16",
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-kia-ev9-gt",
@@ -4705,7 +4987,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-kia-ev9-long-range-awd",
@@ -4724,21 +5008,24 @@
       ],
       "ac_charge_hours_240v": 10.7,
       "epa_source": "EPA fueleconomy.gov vehicles.csv",
-      "starting_price_usd": null,
+      "starting_price_usd": 63900,
       "dc_peak_kw": null,
-      "dc_10_80_minutes": null,
+      "dc_10_80_minutes": 24,
       "controls": null,
-      "controls_note": null,
+      "controls_note": "12.3-inch touchscreen with navigation, a 12.3-inch instrument display and a separate 5-inch climate display; Kia's spec table lists \"Smart-Touch Haptic Controls\" without stating whether climate controls are physical, so 'controls' is left unrated.",
       "seats": null,
-      "cargo_cu_ft": null,
-      "tow_rating_lbs": null,
-      "port": null,
+      "cargo_cu_ft": 20.2,
+      "tow_rating_lbs": 3500,
+      "port": "NACS",
       "heat_pump": null,
       "reliability_score": null,
       "reliability_source": null,
       "reliability_url": null,
-      "source_url": null,
-      "checked": null
+      "source_url": "https://www.kia.com/us/en/ev9/specs-compare",
+      "checked": "2026-09-20",
+      "controls_source": null,
+      "controls_url": null,
+      "trim_matched": "Wind AWD"
     },
     {
       "id": "2026-kia-ev9-long-range-awd-gt-line",
@@ -4757,21 +5044,24 @@
       ],
       "ac_charge_hours_240v": 10.5,
       "epa_source": "EPA fueleconomy.gov vehicles.csv",
-      "starting_price_usd": null,
+      "starting_price_usd": 71900,
       "dc_peak_kw": null,
-      "dc_10_80_minutes": null,
+      "dc_10_80_minutes": 24,
       "controls": null,
-      "controls_note": null,
+      "controls_note": "12.3-inch touchscreen with navigation, a 12.3-inch instrument display and a separate 5-inch climate display; Kia's spec table lists \"Smart-Touch Haptic Controls\" without stating whether climate controls are physical, so 'controls' is left unrated.",
       "seats": null,
-      "cargo_cu_ft": null,
-      "tow_rating_lbs": null,
-      "port": null,
+      "cargo_cu_ft": 20.2,
+      "tow_rating_lbs": 5000,
+      "port": "NACS",
       "heat_pump": null,
       "reliability_score": null,
       "reliability_source": null,
       "reliability_url": null,
-      "source_url": null,
-      "checked": null
+      "source_url": "https://www.kia.com/us/en/ev9/specs-compare",
+      "checked": "2026-09-20",
+      "controls_source": null,
+      "controls_url": null,
+      "trim_matched": "GT-Line AWD"
     },
     {
       "id": "2026-kia-ev9-long-range-rwd",
@@ -4790,21 +5080,24 @@
       ],
       "ac_charge_hours_240v": 10.7,
       "epa_source": "EPA fueleconomy.gov vehicles.csv",
-      "starting_price_usd": null,
+      "starting_price_usd": 57900,
       "dc_peak_kw": null,
-      "dc_10_80_minutes": null,
+      "dc_10_80_minutes": 24,
       "controls": null,
-      "controls_note": null,
+      "controls_note": "12.3-inch touchscreen with navigation, a 12.3-inch instrument display and a separate 5-inch climate display; Kia's spec table lists \"Smart-Touch Haptic Controls\" without stating whether climate controls are physical, so 'controls' is left unrated.",
       "seats": null,
-      "cargo_cu_ft": null,
-      "tow_rating_lbs": null,
-      "port": null,
+      "cargo_cu_ft": 20.2,
+      "tow_rating_lbs": 2000,
+      "port": "NACS",
       "heat_pump": null,
       "reliability_score": null,
       "reliability_source": null,
       "reliability_url": null,
-      "source_url": null,
-      "checked": null
+      "source_url": "https://www.kia.com/us/en/ev9/specs-compare",
+      "checked": "2026-09-20",
+      "controls_source": null,
+      "controls_url": null,
+      "trim_matched": "Light Long Range RWD"
     },
     {
       "id": "2026-kia-ev9-standard-range-rwd",
@@ -4823,21 +5116,24 @@
       ],
       "ac_charge_hours_240v": 8.1,
       "epa_source": "EPA fueleconomy.gov vehicles.csv",
-      "starting_price_usd": null,
+      "starting_price_usd": 54900,
       "dc_peak_kw": null,
-      "dc_10_80_minutes": null,
+      "dc_10_80_minutes": 20,
       "controls": null,
-      "controls_note": null,
+      "controls_note": "12.3-inch touchscreen with navigation, a 12.3-inch instrument display and a separate 5-inch climate display; Kia's spec table lists \"Smart-Touch Haptic Controls\" without stating whether climate controls are physical, so 'controls' is left unrated.",
       "seats": null,
-      "cargo_cu_ft": null,
-      "tow_rating_lbs": null,
-      "port": null,
+      "cargo_cu_ft": 20.2,
+      "tow_rating_lbs": 2000,
+      "port": "NACS",
       "heat_pump": null,
       "reliability_score": null,
       "reliability_source": null,
       "reliability_url": null,
-      "source_url": null,
-      "checked": null
+      "source_url": "https://www.kia.com/us/en/ev9/specs-compare",
+      "checked": "2026-09-20",
+      "controls_source": null,
+      "controls_url": null,
+      "trim_matched": "Light RWD"
     },
     {
       "id": "2026-kia-niro-electric",
@@ -4870,7 +5166,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-lexus-es-350e",
@@ -4903,7 +5201,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-lexus-es-500e-awd",
@@ -4936,7 +5236,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-lexus-rz-350e-fwd",
@@ -4969,7 +5271,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-lexus-rz-450e-awd",
@@ -5002,7 +5306,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-lexus-rz-550e-awd",
@@ -5035,7 +5341,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-lucid-air-g-touring-xr-awd-with-20-inch-wheels",
@@ -5068,7 +5376,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-lucid-air-g-touring-xr-awd-with-21-inch-wheels",
@@ -5101,7 +5411,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-lucid-air-g-touring-xr-awd-with19-inch-wheels",
@@ -5134,7 +5446,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-lucid-air-pure-rwd-with-19-inch-wheels",
@@ -5167,7 +5481,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-lucid-air-pure-rwd-with-20-inch-wheels",
@@ -5200,7 +5516,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-lucid-air-sapphire-awd",
@@ -5233,7 +5551,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-lucid-air-touring-awd-with-19-inch-wheels",
@@ -5266,7 +5586,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-lucid-air-touring-awd-with-20-inch-wheels",
@@ -5299,7 +5621,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-lucid-gravity-dream-w-20f21r-wheels",
@@ -5332,7 +5656,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-lucid-gravity-dream-w-21f22r-wheels",
@@ -5365,7 +5691,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-lucid-gravity-dream-w-22f23r-wheels",
@@ -5398,7 +5726,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-lucid-gravity-gt-w-20f21r-wheels",
@@ -5431,7 +5761,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-lucid-gravity-gt-w-20f21r-wheels",
@@ -5464,7 +5796,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-lucid-gravity-gt-w-21f22r-wheels",
@@ -5497,7 +5831,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-lucid-gravity-gt-w-21f22r-wheels",
@@ -5530,7 +5866,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-lucid-gravity-gt-w-22f23r-wheels",
@@ -5563,7 +5901,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-lucid-gravity-gt-w-22f23r-wheels",
@@ -5596,7 +5936,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-lucid-gravity-touring-w-20f21r-wheels",
@@ -5629,7 +5971,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-lucid-gravity-touring-w-20f21r-wheels",
@@ -5662,7 +6006,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-maserati-grancabrio-folgore",
@@ -5695,7 +6041,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-maserati-grecale-folgore",
@@ -5728,7 +6076,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-mercedes-benz-amg-eqe-4matic-plus",
@@ -5762,7 +6112,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-mercedes-benz-cla250-plus-with-eq-tech",
@@ -5795,7 +6147,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-mercedes-benz-cla250-plus-with-eq-tech",
@@ -5828,7 +6182,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-mercedes-benz-cla350-4matic-with-eq-tech",
@@ -5861,7 +6217,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-mercedes-benz-cla350-4matic-with-eq-tech",
@@ -5894,7 +6252,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-mercedes-benz-eqe-320-4matic",
@@ -5928,7 +6288,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-mercedes-benz-eqe-320-plus",
@@ -5962,7 +6324,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-mercedes-benz-eqe-320-plus",
@@ -5995,7 +6359,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-mercedes-benz-eqs-400-4matic",
@@ -6028,7 +6394,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-mercedes-benz-eqs-400-4matic",
@@ -6061,7 +6429,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-mercedes-benz-eqs-450-4matic",
@@ -6094,7 +6464,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-mercedes-benz-eqs-450-plus",
@@ -6127,7 +6499,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-mercedes-benz-eqs-550-4matic",
@@ -6160,7 +6534,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-mercedes-benz-eqs-550-4matic",
@@ -6193,7 +6569,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-mercedes-benz-eqs-580-4matic",
@@ -6226,7 +6604,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-mercedes-benz-eqs-680-4matic-maybach",
@@ -6259,7 +6639,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-mercedes-benz-g-580-with-eq-technology",
@@ -6292,7 +6674,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-mini-countryman-se-all4",
@@ -6325,7 +6709,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-mini-countryman-se-all4",
@@ -6358,7 +6744,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-nissan-ariya-e-4orce-63kwh",
@@ -6391,7 +6779,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-nissan-ariya-e-4orce-87kwh",
@@ -6424,7 +6814,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-nissan-ariya-fwd-63kwh",
@@ -6457,7 +6849,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-nissan-ariya-fwd-87kwh",
@@ -6490,7 +6884,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-nissan-ariya-platinum+-e-4orce-87kwh-19in.-wheels",
@@ -6523,7 +6919,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-nissan-leaf-75kwh",
@@ -6556,7 +6954,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-polestar-3-long-range-dual-motor",
@@ -6578,8 +6978,8 @@
       "starting_price_usd": null,
       "dc_peak_kw": null,
       "dc_10_80_minutes": null,
-      "controls": null,
-      "controls_note": null,
+      "controls": "touchscreen",
+      "controls_note": "Climate control is split across two menu layers on the centre touchscreen; no physical climate controls noted.",
       "seats": null,
       "cargo_cu_ft": null,
       "tow_rating_lbs": null,
@@ -6589,7 +6989,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": "Autogef\u00fchl's review of the updated Polestar 3, via nexusEVnews video-review coverage (June 2026)",
+      "controls_url": null
     },
     {
       "id": "2026-polestar-3-long-range-dual-motor-performance-pack",
@@ -6611,8 +7013,8 @@
       "starting_price_usd": null,
       "dc_peak_kw": null,
       "dc_10_80_minutes": null,
-      "controls": null,
-      "controls_note": null,
+      "controls": "touchscreen",
+      "controls_note": "Climate control is split across two menu layers on the centre touchscreen; no physical climate controls noted.",
       "seats": null,
       "cargo_cu_ft": null,
       "tow_rating_lbs": null,
@@ -6622,7 +7024,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": "Autogef\u00fchl's review of the updated Polestar 3, via nexusEVnews video-review coverage (June 2026)",
+      "controls_url": null
     },
     {
       "id": "2026-polestar-3-long-range-single-motor",
@@ -6644,8 +7048,8 @@
       "starting_price_usd": null,
       "dc_peak_kw": null,
       "dc_10_80_minutes": null,
-      "controls": null,
-      "controls_note": null,
+      "controls": "touchscreen",
+      "controls_note": "Climate control is split across two menu layers on the centre touchscreen; no physical climate controls noted.",
       "seats": null,
       "cargo_cu_ft": null,
       "tow_rating_lbs": null,
@@ -6655,7 +7059,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": "Autogef\u00fchl's review of the updated Polestar 3, via nexusEVnews video-review coverage (June 2026)",
+      "controls_url": null
     },
     {
       "id": "2026-polestar-4-long-range-dual-motor",
@@ -6688,7 +7094,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-polestar-4-long-range-dual-motor-performance",
@@ -6721,7 +7129,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-polestar-4-long-range-single-motor",
@@ -6754,7 +7164,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-macan-4-electric",
@@ -6787,7 +7199,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-macan-4-electric-20in-wheels",
@@ -6820,7 +7234,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-macan-4s-electric",
@@ -6853,7 +7269,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-macan-electric",
@@ -6886,7 +7304,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-macan-electric-20in-wheels",
@@ -6919,7 +7339,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-macan-gts-electric",
@@ -6952,7 +7374,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-macan-turbo-electric",
@@ -6985,7 +7409,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-taycan-4-cross-turismo",
@@ -7018,7 +7444,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-taycan-4-perf-battery-plus",
@@ -7051,7 +7479,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-taycan-4-perf-battery-plus-19in-all-season",
@@ -7084,7 +7514,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-taycan-4-performance-battery",
@@ -7117,7 +7549,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-taycan-4s-cross-turismo",
@@ -7150,7 +7584,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-taycan-4s-perf-battery-plus",
@@ -7183,7 +7619,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-taycan-4s-perf-battery-plus-19in-all-season",
@@ -7216,7 +7654,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-taycan-4s-performance-battery",
@@ -7249,7 +7689,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-taycan-gts",
@@ -7282,7 +7724,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-taycan-gts-sport-turismo",
@@ -7315,7 +7759,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-taycan-performance-battery",
@@ -7348,7 +7794,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-taycan-turbo",
@@ -7381,7 +7829,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-taycan-turbo-cross-turismo",
@@ -7414,7 +7864,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-taycan-turbo-gt",
@@ -7447,7 +7899,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-taycan-turbo-gt-with-weissach-package",
@@ -7480,7 +7934,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-taycan-turbo-s",
@@ -7513,7 +7969,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-porsche-taycan-turbo-s-cross-turismo",
@@ -7546,7 +8004,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1s-all-terrain-dual-large",
@@ -7579,7 +8039,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1s-all-terrain-dual-large-plus",
@@ -7612,7 +8074,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1s-all-terrain-dual-max",
@@ -7645,7 +8109,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1s-all-terrain-performance--dual-max",
@@ -7678,7 +8144,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1s-all-terrain-performance-dual-large",
@@ -7711,7 +8179,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1s-all-terrain-performance-dual-large-plus",
@@ -7744,7 +8214,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1s-all-terrain-tri-max",
@@ -7777,7 +8249,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1s-dual-large",
@@ -7810,7 +8284,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1s-dual-large-plus",
@@ -7843,7 +8319,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1s-dual-max",
@@ -7876,7 +8354,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1s-dual-standard",
@@ -7909,7 +8389,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-rivian-r1s-performance",
@@ -7942,7 +8424,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1s-performance-dual-large",
@@ -7975,7 +8459,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1s-performance-dual-large-plus",
@@ -8008,7 +8494,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1s-performance-dual-max",
@@ -8041,7 +8529,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-rivian-r1s-premium",
@@ -8074,7 +8564,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-rivian-r1s-premium-long-range",
@@ -8107,7 +8599,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-rivian-r1s-quad",
@@ -8140,7 +8634,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1s-quad-max",
@@ -8173,7 +8669,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1s-tri-max",
@@ -8206,7 +8704,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1t-all-terrain-dual-large",
@@ -8239,7 +8739,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1t-all-terrain-dual-large-plus",
@@ -8272,7 +8774,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1t-all-terrain-dual-max",
@@ -8305,7 +8809,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1t-all-terrain-performance-dual-large",
@@ -8338,7 +8844,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1t-all-terrain-performance-dual-large-plus",
@@ -8371,7 +8879,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1t-all-terrain-performance-dual-max",
@@ -8404,7 +8914,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1t-all-terrain-tri-max",
@@ -8437,7 +8949,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1t-dual-large",
@@ -8470,7 +8984,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1t-dual-large-plus",
@@ -8503,7 +9019,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1t-dual-max",
@@ -8536,7 +9054,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1t-dual-standard",
@@ -8569,7 +9089,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-rivian-r1t-performance",
@@ -8602,7 +9124,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1t-performance-dual-large",
@@ -8635,7 +9159,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1t-performance-dual-large-plus",
@@ -8668,7 +9194,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1t-performance-dual-max",
@@ -8701,7 +9229,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-rivian-r1t-premium",
@@ -8734,7 +9264,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-rivian-r1t-premium-long-range",
@@ -8767,7 +9299,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-rivian-r1t-quad",
@@ -8800,7 +9334,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1t-quad-max",
@@ -8833,7 +9369,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rivian-r1t-tri-max",
@@ -8866,7 +9404,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-rivian-r2-performance-awd",
@@ -8899,7 +9439,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rolls-royce-spectre",
@@ -8932,7 +9474,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-rolls-royce-spectre-black-badge",
@@ -8965,7 +9509,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-subaru-solterra-20-awd",
@@ -8998,7 +9544,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-subaru-solterra-20-awd",
@@ -9031,7 +9579,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-subaru-solterra-awd",
@@ -9064,7 +9614,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-subaru-solterra-awd",
@@ -9097,7 +9649,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-subaru-trailseeker-20-inch-awd",
@@ -9130,7 +9684,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-subaru-trailseeker-20-inch-awd",
@@ -9163,7 +9719,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-subaru-trailseeker-awd",
@@ -9196,7 +9754,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-subaru-trailseeker-awd",
@@ -9229,7 +9789,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-subaru-uncharted",
@@ -9262,7 +9824,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-subaru-uncharted",
@@ -9295,7 +9859,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-subaru-uncharted-20-inch-awd",
@@ -9328,7 +9894,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-subaru-uncharted-20-inch-awd",
@@ -9361,7 +9929,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-subaru-uncharted-awd",
@@ -9394,7 +9964,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-subaru-uncharted-awd",
@@ -9427,7 +9999,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-tesla-cybertruck-awd",
@@ -9460,7 +10034,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-tesla-cybertruck-dual-motor-awd",
@@ -9493,7 +10069,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-tesla-cybertruck-long-range",
@@ -9526,7 +10104,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-tesla-model-3-performance",
@@ -9559,7 +10139,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-tesla-model-3-performance-awd",
@@ -9592,7 +10174,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-tesla-model-3-premium-awd",
@@ -9625,7 +10209,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-tesla-model-3-premium-rwd",
@@ -9658,7 +10244,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-tesla-model-3-standard-rwd",
@@ -9691,7 +10279,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-tesla-model-s",
@@ -9724,7 +10314,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-tesla-model-s-plaid",
@@ -9757,7 +10349,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-tesla-model-x",
@@ -9790,7 +10384,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-tesla-model-x-plaid",
@@ -9823,7 +10419,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-tesla-model-y-long-range-awd",
@@ -9845,8 +10443,8 @@
       "starting_price_usd": null,
       "dc_peak_kw": null,
       "dc_10_80_minutes": null,
-      "controls": null,
-      "controls_note": null,
+      "controls": "touchscreen",
+      "controls_note": "Steering wheel functions run through a capacitive touch panel rather than physical switches, and per-row climate is adjusted from the centre screen.",
       "seats": null,
       "cargo_cu_ft": null,
       "tow_rating_lbs": null,
@@ -9856,7 +10454,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": "Reviews from carwow and Kim Java, via nexusEVnews video-review coverage (August and September 2026)",
+      "controls_url": null
     },
     {
       "id": "2026-tesla-model-y-long-range-rwd",
@@ -9878,8 +10478,8 @@
       "starting_price_usd": null,
       "dc_peak_kw": null,
       "dc_10_80_minutes": null,
-      "controls": null,
-      "controls_note": null,
+      "controls": "touchscreen",
+      "controls_note": "Steering wheel functions run through a capacitive touch panel rather than physical switches, and per-row climate is adjusted from the centre screen.",
       "seats": null,
       "cargo_cu_ft": null,
       "tow_rating_lbs": null,
@@ -9889,7 +10489,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": "Reviews from carwow and Kim Java, via nexusEVnews video-review coverage (August and September 2026)",
+      "controls_url": null
     },
     {
       "id": "2026-tesla-model-y-performance-awd",
@@ -9911,8 +10513,8 @@
       "starting_price_usd": null,
       "dc_peak_kw": null,
       "dc_10_80_minutes": null,
-      "controls": null,
-      "controls_note": null,
+      "controls": "touchscreen",
+      "controls_note": "Steering wheel functions run through a capacitive touch panel rather than physical switches, and per-row climate is adjusted from the centre screen.",
       "seats": null,
       "cargo_cu_ft": null,
       "tow_rating_lbs": null,
@@ -9922,7 +10524,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": "Reviews from carwow and Kim Java, via nexusEVnews video-review coverage (August and September 2026)",
+      "controls_url": null
     },
     {
       "id": "2026-tesla-model-y-standard-awd",
@@ -9944,8 +10548,8 @@
       "starting_price_usd": null,
       "dc_peak_kw": null,
       "dc_10_80_minutes": null,
-      "controls": null,
-      "controls_note": null,
+      "controls": "touchscreen",
+      "controls_note": "Steering wheel functions run through a capacitive touch panel rather than physical switches, and per-row climate is adjusted from the centre screen.",
       "seats": null,
       "cargo_cu_ft": null,
       "tow_rating_lbs": null,
@@ -9955,7 +10559,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": "Reviews from carwow and Kim Java, via nexusEVnews video-review coverage (August and September 2026)",
+      "controls_url": null
     },
     {
       "id": "2026-tesla-model-y-standard-rwd",
@@ -9977,8 +10583,8 @@
       "starting_price_usd": null,
       "dc_peak_kw": null,
       "dc_10_80_minutes": null,
-      "controls": null,
-      "controls_note": null,
+      "controls": "touchscreen",
+      "controls_note": "Steering wheel functions run through a capacitive touch panel rather than physical switches, and per-row climate is adjusted from the centre screen.",
       "seats": null,
       "cargo_cu_ft": null,
       "tow_rating_lbs": null,
@@ -9988,7 +10594,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": "Reviews from carwow and Kim Java, via nexusEVnews video-review coverage (August and September 2026)",
+      "controls_url": null
     },
     {
       "id": "2026-toyota-bz",
@@ -10021,7 +10629,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-toyota-bz-awd",
@@ -10054,7 +10664,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-toyota-bz-awd-limited",
@@ -10087,7 +10699,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-toyota-bz-limited",
@@ -10120,7 +10734,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-toyota-bz-woodland-awd-235-60r18",
@@ -10153,7 +10769,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-toyota-bz-woodland-awd-235-65r18",
@@ -10186,7 +10804,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-toyota-c-hr-awd-18inch",
@@ -10219,7 +10839,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-toyota-c-hr-awd-20inch",
@@ -10252,7 +10874,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-vinfast-vf-7-plus",
@@ -10285,7 +10909,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-vinfast-vf-8-eco",
@@ -10318,7 +10944,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-vinfast-vf-8-plus",
@@ -10351,7 +10979,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-vinfast-vf-9-plus",
@@ -10384,7 +11014,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-volkswagen-id.4",
@@ -10403,21 +11035,23 @@
       ],
       "ac_charge_hours_240v": 8,
       "epa_source": "EPA fueleconomy.gov vehicles.csv",
-      "starting_price_usd": null,
+      "starting_price_usd": 45095,
       "dc_peak_kw": null,
-      "dc_10_80_minutes": null,
+      "dc_10_80_minutes": 28,
       "controls": null,
-      "controls_note": null,
+      "controls_note": "12.9-inch touchscreen; vw.com does not state whether climate controls are physical, so 'controls' is left unrated.",
       "seats": null,
       "cargo_cu_ft": null,
       "tow_rating_lbs": null,
-      "port": null,
+      "port": "CCS",
       "heat_pump": null,
       "reliability_score": null,
       "reliability_source": null,
       "reliability_url": null,
-      "source_url": null,
-      "checked": null
+      "source_url": "https://www.vw.com/en/models/id-4.html",
+      "checked": "2026-09-14",
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-volkswagen-id.4-awd",
@@ -10438,19 +11072,21 @@
       "epa_source": "EPA fueleconomy.gov vehicles.csv",
       "starting_price_usd": null,
       "dc_peak_kw": null,
-      "dc_10_80_minutes": null,
+      "dc_10_80_minutes": 28,
       "controls": null,
-      "controls_note": null,
+      "controls_note": "12.9-inch touchscreen; vw.com does not state whether climate controls are physical, so 'controls' is left unrated.",
       "seats": null,
       "cargo_cu_ft": null,
       "tow_rating_lbs": null,
-      "port": null,
+      "port": "CCS",
       "heat_pump": null,
       "reliability_score": null,
       "reliability_source": null,
       "reliability_url": null,
-      "source_url": null,
-      "checked": null
+      "source_url": "https://www.vw.com/en/models/id-4.html",
+      "checked": "2026-09-14",
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-volvo-ec40",
@@ -10483,7 +11119,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-volvo-ec40-twin",
@@ -10516,7 +11154,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-volvo-ex30-cross-country",
@@ -10549,7 +11189,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-volvo-ex30-single-motor-extended-range",
@@ -10582,7 +11224,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-volvo-ex30-twin-performance",
@@ -10615,7 +11259,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-volvo-ex40",
@@ -10648,7 +11294,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-volvo-ex40-twin",
@@ -10681,7 +11329,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-volvo-ex60-p10-awd-electric",
@@ -10714,7 +11364,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-volvo-ex60-p6-electric",
@@ -10747,7 +11399,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-volvo-ex90",
@@ -10780,7 +11434,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-volvo-ex90",
@@ -10813,7 +11469,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-volvo-ex90-twin-motor",
@@ -10846,7 +11504,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-volvo-ex90-twin-motor",
@@ -10879,7 +11539,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2026-volvo-ex90-twin-motor-performance",
@@ -10912,7 +11574,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     },
     {
       "id": "2027-volvo-ex90-twin-motor-performance",
@@ -10945,7 +11609,9 @@
       "reliability_source": null,
       "reliability_url": null,
       "source_url": null,
-      "checked": null
+      "checked": null,
+      "controls_source": null,
+      "controls_url": null
     }
   ]
 }

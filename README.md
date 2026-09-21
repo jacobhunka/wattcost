@@ -79,6 +79,10 @@ For each car you want to appear, open data/models.json and fill in:
 "dc_10_80_minutes": 43,             if the manufacturer publishes it, else leave null
 "controls": "mixed",                "buttons", "mixed", or "touchscreen"
 "controls_note": "climate knobs, volume knob, rest on screen",
+"controls_source": null,            fill in ONLY if you didn't see it yourself
+                                    (a review you read/watched) - leave blank if
+                                    you're recording your own first-hand observation
+"controls_url": null,               optional link for readers, if there is one
 "seats": 5,
 "cargo_cu_ft": 26.4,                behind the rear seats
 "tow_rating_lbs": 1500,             0 if the maker says it can't tow

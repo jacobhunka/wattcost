@@ -47,6 +47,8 @@ MANUAL_FIELDS = {
     "dc_10_80_minutes": None,        # manufacturer's 10-80% fast-charge time, if published
     "controls": None,                # "buttons", "mixed", or "touchscreen"
     "controls_note": None,           # what you saw, e.g. "physical climate knobs, volume knob"
+    "controls_source": None,         # who reported it, if not you personally (e.g. a review)
+    "controls_url": None,            # link for readers, if the source has a public page
     "seats": None,                   # number of seats
     "cargo_cu_ft": None,             # cargo behind the rear seats
     "tow_rating_lbs": None,          # 0 if the maker says it can't tow

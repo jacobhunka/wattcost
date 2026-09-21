@@ -320,7 +320,8 @@
         : '<span class="unchecked">Fast-charging speed not checked yet</span>');
       if (m.ac_charge_hours_240v) li.push('About ' + m.ac_charge_hours_240v + ' h to fill on a 240-volt charger');
       li.push(m.body.join(', ') + ' · ' + m.drive.join('/') + (has(m.seats) ? ' · ' + m.seats + ' seats' : ''));
-      li.push(has(m.controls) ? 'Controls: ' + m.controls + (m.controls_note ? ' (' + m.controls_note + ')' : '') : '<span class="unchecked">Controls not checked yet</span>');
+      li.push(has(m.controls) ? 'Controls: ' + m.controls + (m.controls_note ? ' (' + m.controls_note + ')' : '') +
+        (m.controls_source ? ' \u2014 per ' + m.controls_source : '') : '<span class="unchecked">Controls not checked yet</span>');
       if (has(m.tow_rating_lbs)) li.push(m.tow_rating_lbs > 0 ? 'Tows up to ' + m.tow_rating_lbs.toLocaleString('en-US') + ' lb' : 'Not rated for towing');
       if (has(m.port)) li.push(m.port + ' charging plug');
       li.push(has(m.reliability_score)
