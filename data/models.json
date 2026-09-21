@@ -4709,7 +4709,8 @@
       "source_url": null,
       "checked": null,
       "controls_source": null,
-      "controls_url": null
+      "controls_url": null,
+      "nhtsa_lookup_failed": true
     },
     {
       "id": "2027-kia-ev3-long-range-fwd",
@@ -4744,7 +4745,8 @@
       "source_url": null,
       "checked": null,
       "controls_source": null,
-      "controls_url": null
+      "controls_url": null,
+      "nhtsa_lookup_failed": true
     },
     {
       "id": "2027-kia-ev3-long-range-gt-awd",
@@ -4779,7 +4781,8 @@
       "source_url": null,
       "checked": null,
       "controls_source": null,
-      "controls_url": null
+      "controls_url": null,
+      "nhtsa_lookup_failed": true
     },
     {
       "id": "2027-kia-ev3-standard-range-fwd",
@@ -4814,7 +4817,8 @@
       "source_url": null,
       "checked": null,
       "controls_source": null,
-      "controls_url": null
+      "controls_url": null,
+      "nhtsa_lookup_failed": true
     },
     {
       "id": "2026-kia-ev6-awd-gt",
@@ -4849,7 +4853,8 @@
       "source_url": null,
       "checked": null,
       "controls_source": null,
-      "controls_url": null
+      "controls_url": null,
+      "nhtsa_lookup_failed": true
     },
     {
       "id": "2026-kia-ev6-long-range-awd",
@@ -4884,7 +4889,8 @@
       "source_url": "https://www.kiamedia.com/us/en/media/pressreleases/24658/kia-announces-pricing-for-2026-ev6",
       "checked": "2026-09-16",
       "controls_source": null,
-      "controls_url": null
+      "controls_url": null,
+      "nhtsa_lookup_failed": true
     },
     {
       "id": "2026-kia-ev6-long-range-rwd",
@@ -4919,7 +4925,8 @@
       "source_url": "https://www.kiamedia.com/us/en/media/pressreleases/24658/kia-announces-pricing-for-2026-ev6",
       "checked": "2026-09-16",
       "controls_source": null,
-      "controls_url": null
+      "controls_url": null,
+      "nhtsa_lookup_failed": true
     },
     {
       "id": "2026-kia-ev6-standard-range-rwd",
@@ -4954,7 +4961,8 @@
       "source_url": "https://www.kiamedia.com/us/en/media/pressreleases/24658/kia-announces-pricing-for-2026-ev6",
       "checked": "2026-09-16",
       "controls_source": null,
-      "controls_url": null
+      "controls_url": null,
+      "nhtsa_lookup_failed": true
     },
     {
       "id": "2026-kia-ev9-gt",
@@ -4989,7 +4997,17 @@
       "source_url": null,
       "checked": null,
       "controls_source": null,
-      "controls_url": null
+      "controls_url": null,
+      "nhtsa_model_used": "EV9",
+      "nhtsa_recalls": 2,
+      "nhtsa_complaints": null,
+      "nhtsa_recall_url": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=Kia&model=EV9&modelYear=2026",
+      "nhtsa_complaint_url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=Kia&model=EV9&modelYear=2026",
+      "nhtsa_prev_year": 2025,
+      "nhtsa_prev_recalls": 4,
+      "nhtsa_prev_complaints": 12,
+      "nhtsa_prev_recall_url": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=Kia&model=EV9&modelYear=2025",
+      "nhtsa_checked": "2026-09-21"
     },
     {
       "id": "2026-kia-ev9-long-range-awd",
@@ -5025,7 +5043,17 @@
       "checked": "2026-09-20",
       "controls_source": null,
       "controls_url": null,
-      "trim_matched": "Wind AWD"
+      "trim_matched": "Wind AWD",
+      "nhtsa_model_used": "EV9",
+      "nhtsa_recalls": 2,
+      "nhtsa_complaints": null,
+      "nhtsa_recall_url": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=Kia&model=EV9&modelYear=2026",
+      "nhtsa_complaint_url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=Kia&model=EV9&modelYear=2026",
+      "nhtsa_prev_year": 2025,
+      "nhtsa_prev_recalls": 4,
+      "nhtsa_prev_complaints": 12,
+      "nhtsa_prev_recall_url": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=Kia&model=EV9&modelYear=2025",
+      "nhtsa_checked": "2026-09-21"
     },
     {
       "id": "2026-kia-ev9-long-range-awd-gt-line",
@@ -5061,7 +5089,17 @@
       "checked": "2026-09-20",
       "controls_source": null,
       "controls_url": null,
-      "trim_matched": "GT-Line AWD"
+      "trim_matched": "GT-Line AWD",
+      "nhtsa_model_used": "EV9",
+      "nhtsa_recalls": 2,
+      "nhtsa_complaints": null,
+      "nhtsa_recall_url": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=Kia&model=EV9&modelYear=2026",
+      "nhtsa_complaint_url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=Kia&model=EV9&modelYear=2026",
+      "nhtsa_prev_year": 2025,
+      "nhtsa_prev_recalls": 4,
+      "nhtsa_prev_complaints": 12,
+      "nhtsa_prev_recall_url": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=Kia&model=EV9&modelYear=2025",
+      "nhtsa_checked": "2026-09-21"
     },
     {
       "id": "2026-kia-ev9-long-range-rwd",
@@ -5097,7 +5135,17 @@
       "checked": "2026-09-20",
       "controls_source": null,
       "controls_url": null,
-      "trim_matched": "Light Long Range RWD"
+      "trim_matched": "Light Long Range RWD",
+      "nhtsa_model_used": "EV9",
+      "nhtsa_recalls": 2,
+      "nhtsa_complaints": null,
+      "nhtsa_recall_url": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=Kia&model=EV9&modelYear=2026",
+      "nhtsa_complaint_url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=Kia&model=EV9&modelYear=2026",
+      "nhtsa_prev_year": 2025,
+      "nhtsa_prev_recalls": 4,
+      "nhtsa_prev_complaints": 12,
+      "nhtsa_prev_recall_url": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=Kia&model=EV9&modelYear=2025",
+      "nhtsa_checked": "2026-09-21"
     },
     {
       "id": "2026-kia-ev9-standard-range-rwd",
@@ -5133,7 +5181,17 @@
       "checked": "2026-09-20",
       "controls_source": null,
       "controls_url": null,
-      "trim_matched": "Light RWD"
+      "trim_matched": "Light RWD",
+      "nhtsa_model_used": "EV9",
+      "nhtsa_recalls": 2,
+      "nhtsa_complaints": null,
+      "nhtsa_recall_url": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=Kia&model=EV9&modelYear=2026",
+      "nhtsa_complaint_url": "https://api.nhtsa.gov/complaints/complaintsByVehicle?make=Kia&model=EV9&modelYear=2026",
+      "nhtsa_prev_year": 2025,
+      "nhtsa_prev_recalls": 4,
+      "nhtsa_prev_complaints": 12,
+      "nhtsa_prev_recall_url": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=Kia&model=EV9&modelYear=2025",
+      "nhtsa_checked": "2026-09-21"
     },
     {
       "id": "2026-kia-niro-electric",
@@ -5168,7 +5226,8 @@
       "source_url": null,
       "checked": null,
       "controls_source": null,
-      "controls_url": null
+      "controls_url": null,
+      "nhtsa_lookup_failed": true
     },
     {
       "id": "2026-lexus-es-350e",
@@ -11613,5 +11672,6 @@
       "controls_source": null,
       "controls_url": null
     }
-  ]
+  ],
+  "nhtsa_note": "Recall and complaint counts from NHTSA's free public API. Counts are not a reliability rating: popular models collect more complaints regardless of build quality, and NHTSA publishes no sales figures to correct for it. Source: https://www.nhtsa.gov/nhtsa-datasets-and-apis"
 }
