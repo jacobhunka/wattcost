@@ -76,16 +76,24 @@ def get_json(url):
         return json.loads(r.read().decode("utf-8"))
 
 
+_CACHE = {}
+
+
 def count_for(url_template, make, model, year):
     """Returns (count, url) or (None, url) if the lookup failed."""
     url = url_template.format(make=quote(make), model=quote(model), year=year)
+    if url in _CACHE:
+        return _CACHE[url], url
+    time.sleep(PAUSE_SECONDS)
     try:
         data = get_json(url)
     except (HTTPError, URLError, ValueError, TimeoutError) as e:
         print(f"    lookup failed ({e})")
         return None, url
     results = data.get("results")
-    return (len(results) if isinstance(results, list) else None), url
+    n = len(results) if isinstance(results, list) else None
+    _CACHE[url] = n
+    return n, url
 
 
 def main():
@@ -117,16 +125,17 @@ def main():
         print("Nothing to do. Use --refresh to re-check models already done.")
         return
 
-    print(f"Checking {len(todo)} models against NHTSA. About {len(todo) * 2} requests.\n")
+    print(f"Checking {len(todo)} models against NHTSA (this year and last year).\n")
     done = failed = 0
     try:
         for i, m in enumerate(todo, 1):
             name = m.get("nhtsa_model") or nhtsa_name(m["model"])
             print(f"[{i}/{len(todo)}] {m['year']} {m['make']} {m['model']}  ->  NHTSA: {name}")
             recalls, recall_url = count_for(RECALLS, m["make"], name, m["year"])
-            time.sleep(PAUSE_SECONDS)
             complaints, complaint_url = count_for(COMPLAINTS, m["make"], name, m["year"])
-            time.sleep(PAUSE_SECONDS)
+            prev = m["year"] - 1
+            p_recalls, p_recall_url = count_for(RECALLS, m["make"], name, prev)
+            p_complaints, p_complaint_url = count_for(COMPLAINTS, m["make"], name, prev)
 
             if recalls is None and complaints is None:
                 m["nhtsa_lookup_failed"] = True
@@ -140,9 +149,14 @@ def main():
             m["nhtsa_complaints"] = complaints
             m["nhtsa_recall_url"] = recall_url
             m["nhtsa_complaint_url"] = complaint_url
+            m["nhtsa_prev_year"] = prev
+            m["nhtsa_prev_recalls"] = p_recalls
+            m["nhtsa_prev_complaints"] = p_complaints
+            m["nhtsa_prev_recall_url"] = p_recall_url
             m["nhtsa_checked"] = date.today().isoformat()
             done += 1
-            print(f"    {recalls} recalls, {complaints} complaints")
+            print(f"    {m['year']}: {recalls} recalls, {complaints} complaints   |   "
+                  f"{prev}: {p_recalls} recalls, {p_complaints} complaints")
     except KeyboardInterrupt:
         print("\nStopped. Saving what was collected so far.")
 
