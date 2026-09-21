@@ -3330,7 +3330,7 @@
       ],
       "ac_charge_hours_240v": 9.9,
       "epa_source": "EPA fueleconomy.gov vehicles.csv",
-      "starting_price_usd": null,
+      "starting_price_usd": 53890,
       "dc_peak_kw": null,
       "dc_10_80_minutes": null,
       "controls": null,
@@ -3343,10 +3343,11 @@
       "reliability_score": null,
       "reliability_source": null,
       "reliability_url": null,
-      "source_url": "https://www.ford.com/suvs/mach-e/",
-      "checked": "2026-09-14",
+      "source_url": "https://www.ford.com/build-price/mach-e/choose-model",
+      "checked": "2026-09-21",
       "controls_source": null,
-      "controls_url": null
+      "controls_url": null,
+      "trim_matched": "GT (eAWD)"
     },
     {
       "id": "2026-ford-mustang-mach-e-rally",
@@ -3365,7 +3366,7 @@
       ],
       "ac_charge_hours_240v": 10,
       "epa_source": "EPA fueleconomy.gov vehicles.csv",
-      "starting_price_usd": null,
+      "starting_price_usd": 57690,
       "dc_peak_kw": null,
       "dc_10_80_minutes": null,
       "controls": null,
@@ -3378,10 +3379,11 @@
       "reliability_score": null,
       "reliability_source": null,
       "reliability_url": null,
-      "source_url": "https://www.ford.com/suvs/mach-e/",
-      "checked": "2026-09-14",
+      "source_url": "https://www.ford.com/build-price/mach-e/choose-model",
+      "checked": "2026-09-21",
       "controls_source": null,
-      "controls_url": null
+      "controls_url": null,
+      "trim_matched": "Rally (eAWD)"
     },
     {
       "id": "2026-ford-mustang-mach-e-rwd",
@@ -3400,7 +3402,7 @@
       ],
       "ac_charge_hours_240v": 7.8,
       "epa_source": "EPA fueleconomy.gov vehicles.csv",
-      "starting_price_usd": null,
+      "starting_price_usd": 38290,
       "dc_peak_kw": null,
       "dc_10_80_minutes": null,
       "controls": null,
@@ -3408,15 +3410,16 @@
       "seats": 5,
       "cargo_cu_ft": 29.7,
       "tow_rating_lbs": null,
-      "port": null,
+      "port": "CCS",
       "heat_pump": null,
       "reliability_score": null,
       "reliability_source": null,
       "reliability_url": null,
-      "source_url": "https://www.ford.com/suvs/mach-e/",
-      "checked": "2026-09-14",
+      "source_url": "https://www.ford.com/build-price/mach-e/choose-model",
+      "checked": "2026-09-21",
       "controls_source": null,
-      "controls_url": null
+      "controls_url": null,
+      "trim_matched": "Select (standard: 73 kWh Standard-Range battery, RWD); NACS fast-charging adapter is optional"
     },
     {
       "id": "2026-ford-mustang-mach-e-rwd-extended",
