@@ -60,16 +60,20 @@
       <div class="weights-total">Total: <strong><span id="weightTotal">100</span>%</strong> <button type="button" class="btn-reset" id="resetWeights">Reset to even</button></div>
 
       <h2 style="margin-top:1.6rem">Filters</h2>
-      <p class="weights-intro">These rule cars out rather than scoring them. A car is never ruled out by a spec we haven't checked for it.</p>
+      <p class="weights-intro">These rule cars out rather than scoring them. Apart from price, a car is never ruled out by a spec we haven't checked for it.</p>
       <div class="field-row">
         <div class="field">
-          <label for="budget">Most you'd spend <span class="hint">(starting price)</span></label>
+          <label for="budget">Most you'd spend <span class="hint">(starting MSRP, before destination fees)</span></label>
           <input id="budget" type="number" step="1000" min="0" max="200000" placeholder="No limit" inputmode="numeric">
         </div>
         <div class="field">
           <label for="minRange">Least range you'd accept <span class="hint">(mi)</span></label>
           <input id="minRange" type="number" step="10" min="0" max="600" value="200" inputmode="numeric">
         </div>
+      </div>
+      <div class="field">
+        <label class="check"><input type="checkbox" id="showUnpriced"> Include cars we haven't priced yet</label>
+        <div class="source-line">Off by default, so every car shown has a checked price and your budget always holds. Turn it on to see more models; unpriced cars score neutral on price and ignore your budget.</div>
       </div>
       <div class="field-row">
         <div class="field">
@@ -224,23 +228,35 @@
 
   function fillSources() {
     var w = D.g.winter, inc = D.g.incentives;
-    el('winterSrc').textContent = 'AAA measured a ' + w.aaa_loss_pct_20f_with_heat + '% loss at 20F with the heater on; Recurrent reports roughly ' +
-      w.recurrent_loss_pct_freezing + '% near freezing in real-world use. ' + w.note;
+    el('winterSrc').textContent = w.note;
     el('aaaLink').href = w.aaa_url; el('recLink').href = w.recurrent_url;
     el('incentiveText').innerHTML = inc.federal_note + ' ' + inc.state_note + ' <a href="' + inc.source_url + '" rel="noopener">Official summary</a>. Checked ' + inc.checked + '. ' + inc.caution;
-    el('coldNote').textContent = 'Cold cuts range well below the EPA figure: AAA measured ' + w.aaa_loss_pct_20f_with_heat +
-      '% at 20F with the heater running, and Recurrent about ' + w.recurrent_loss_pct_freezing + '% near freezing. Tick this and your minimum-range filter is judged against the colder figure.';
+    el('coldNote').textContent = 'Cold cuts range. Using Recurrent\'s real-world data, we plan on ' + w.recurrent_loss_pct_heat_pump +
+      '% less range for cars with a heat pump, ' + w.recurrent_loss_pct_no_heat_pump + '% for cars without, and ' + w.recurrent_loss_pct_freezing +
+      '% when we haven\'t checked. Tick this and your minimum range is judged against the winter figure. On the coldest days (AAA tested 20F with the heater on) the loss can reach ' +
+      w.aaa_loss_pct_20f_with_heat + '%.';
   }
 
   function status() {
-    var checked = M.filter(function (m) { return m.starting_price_usd !== null; }).length;
-    el('dataStatus').innerHTML = '<strong>Current data:</strong> ' + M.length + ' model-year ' + D.models.model_years +
-      ' EVs from EPA. <strong>' + checked + '</strong> have hand-checked price, charging and controls; the rest show those as "not checked yet" and score neutral on them. Updated ' + D.models.updated + '.';
+    var n = M.length, c = function (k) { return M.filter(function (m) { return has(m[k]); }).length; };
+    el('dataStatus').innerHTML = '<strong>Current data:</strong> ' + n + ' model-year ' + D.models.model_years +
+      ' EV versions with EPA range and efficiency. Hand-checked so far: price for <strong>' + c('starting_price_usd') + '</strong>, fast-charging speed for <strong>' +
+      M.filter(function (m) { return has(m.dc_peak_kw) || has(m.dc_10_80_minutes); }).length + '</strong>, seats for <strong>' + c('seats') +
+      '</strong>, controls for <strong>' + c('controls') + '</strong>, heat pump for <strong>' + c('heat_pump') + '</strong>, reliability for <strong>' + c('reliability_score') +
+      '</strong>. A car missing a value scores neutral on it. Updated ' + D.models.updated + '.';
   }
+
 
   function norm(v, lo, hi) { return hi === lo ? 0.5 : Math.max(0, Math.min(1, (v - lo) / (hi - lo))); }
   function has(v) { return v !== null && v !== undefined; }
-  function winterRange(mi) { return Math.round(mi * (1 - D.g.winter.aaa_loss_pct_20f_with_heat / 100)); }
+  // Range we rank on: the lowest EPA figure across this version's trims and wheels, because the
+  // starting price usually buys the base trim and we don't record which trim each range belongs to.
+  function baseRange(m) { return m.range_min_mi || m.range_max_mi || 0; }
+  function winterLoss(m) {
+    var w = D.g.winter;
+    return m.heat_pump === true ? w.recurrent_loss_pct_heat_pump : m.heat_pump === false ? w.recurrent_loss_pct_no_heat_pump : w.recurrent_loss_pct_freezing;
+  }
+  function winterRange(m) { return Math.round(baseRange(m) * (1 - winterLoss(m) / 100)); }
 
   function rank() {
     var budget = parseFloat(el('budget').value);
@@ -248,11 +264,12 @@
     var cold = el('cold').checked;
     var body = el('bodyPick').value, drive = el('drivePick').value, cpref = el('controlPref').value;
     var seats = parseFloat(el('seatsPick').value) || 0, tow = parseFloat(el('towPick').value) || 0, port = el('portPick').value;
+    var showUnpriced = el('showUnpriced').checked;
 
     // Filters skip a car only when we actually know the value being filtered on.
     var pool = M.filter(function (m) {
-      var r = m.range_max_mi || 0;
-      if ((cold ? winterRange(r) : r) < minRange) return false;
+      if (!showUnpriced && !has(m.starting_price_usd)) return false;
+      if ((cold ? winterRange(m) : baseRange(m)) < minRange) return false;
       if (body && m.body.indexOf(body) === -1) return false;
       if (drive && m.drive.indexOf(drive) === -1) return false;
       if (budget > 0 && has(m.starting_price_usd) && m.starting_price_usd > budget) return false;
@@ -262,7 +279,8 @@
       return true;
     });
     if (!pool.length) {
-      el('matches').innerHTML = '<p class="muted">No cars match those filters. Try raising your budget, lowering the range you need, or setting body style to Any.</p>';
+      el('matches').innerHTML = '<p class="muted">No cars match those filters. Try raising your budget, lowering the range you need, or setting body style to Any.' +
+        (showUnpriced ? '' : ' You can also tick "Include cars we haven\'t priced yet" to search every model we have EPA data for.') + '</p>';
       return;
     }
 
@@ -270,12 +288,13 @@
       var vals = pool.map(function (m) { return m[key]; }).filter(has);
       return vals.length ? [Math.min.apply(null, vals), Math.max.apply(null, vals)] : null;
     };
-    var sR = span('range_max_mi'), sK = span('dc_peak_kw'), sP = span('starting_price_usd'), sE = span('kwh_per_100mi_best');
+    var rv = pool.map(baseRange);
+    var sR = [Math.min.apply(null, rv), Math.max.apply(null, rv)], sK = span('dc_peak_kw'), sP = span('starting_price_usd'), sE = span('kwh_per_100mi_best');
     var sM = span('dc_10_80_minutes');
 
     var scored = pool.map(function (m) {
       var s = {}, unknown = [];
-      s.range = sR && has(m.range_max_mi) ? norm(m.range_max_mi, sR[0], sR[1]) : 0.5;
+      s.range = norm(baseRange(m), sR[0], sR[1]);
       s.efficiency = sE && has(m.kwh_per_100mi_best) ? 1 - norm(m.kwh_per_100mi_best, sE[0], sE[1]) : 0.5;
       s.size = body ? (m.body.indexOf(body) !== -1 ? 1 : 0) : 0.5;
       if (has(m.dc_peak_kw) && sK) {
@@ -307,9 +326,12 @@
 
     el('matches').innerHTML = top.map(function (x, i) {
       var m = x.m, li = [];
-      li.push(has(m.starting_price_usd) ? 'From $' + m.starting_price_usd.toLocaleString('en-US') : '<span class="unchecked">Price not checked yet</span>');
-      var r = m.range_max_mi;
-      li.push(r ? (r + ' mi EPA range' + (cold ? ' · about ' + winterRange(r) + ' mi in hard cold' : '')) : 'Range not listed');
+      li.push(has(m.starting_price_usd) ? 'From $' + m.starting_price_usd.toLocaleString('en-US') + ' MSRP, before destination' : '<span class="unchecked">Price not checked yet</span>');
+      var lo = baseRange(m), hi = m.range_max_mi || lo;
+      li.push(lo ? (hi > lo ? lo + ' to ' + hi + ' mi EPA range by trim and wheels (we rank on the lower figure)'
+                            : lo + ' mi EPA range') +
+                   (cold ? ' · about ' + winterRange(m) + ' mi near freezing' + (m.heat_pump === true ? ' (has a heat pump)' : m.heat_pump === false ? ' (no heat pump)' : '') : '')
+                 : 'Range not listed');
       li.push(has(m.dc_peak_kw)
         ? m.dc_peak_kw + ' kW fast charging' + (has(m.dc_10_80_minutes) ? ' · ' + m.dc_10_80_minutes + ' min to 80%' : '')
         : has(m.dc_10_80_minutes) ? m.dc_10_80_minutes + ' min to charge 10-80%'
@@ -337,13 +359,14 @@
         (m.source_url ? '<p class="match-src">Specs from <a href="' + m.source_url + '" rel="noopener">the manufacturer</a>, checked ' + (m.checked || 'undated') + '</p>' : '') +
         '</div></article>';
     }).join('') +
-      '<p class="muted match-foot">Ranked from ' + pool.length + ' versions that passed your filters, showing one trim per model. ' +
+      '<p class="muted match-foot">Ranked from ' + pool.length + ' versions that passed your filters' + (showUnpriced ? '' : ', all with a checked price') + ', showing one trim per model. ' +
       (currentHome() && currentHome().id === 'none' ? 'Because you have no home charging, fast-charging speed is weighted up and it is worth mapping the chargers near you before choosing a car. ' : '') +
       'No score replaces a test drive.</p>';
   }
 
   el('homeCharge').addEventListener('change', onHome);
   el('cold').addEventListener('change', rank);
+  el('showUnpriced').addEventListener('change', rank);
   ['budget', 'minRange'].forEach(function (id) { el(id).addEventListener('input', rank); });
   ['bodyPick', 'drivePick', 'controlPref', 'seatsPick', 'towPick', 'portPick'].forEach(function (id) { el(id).addEventListener('change', rank); });
   el('resetWeights').addEventListener('click', function () { evenWeights(); syncWeights(); rank(); });
