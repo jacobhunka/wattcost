@@ -167,6 +167,17 @@ Press Control + C to stop the server when you're done.
 2. In GitHub Desktop, type a summary, click Commit to main, then Push origin.
 3. The live site updates in about a minute at https://jacobhunka.github.io/wattcost/
 
+## When you change the design (assets/site.css)
+
+Every page loads the stylesheet as `assets/site.css?v=2`. Browsers cache that file, so after
+editing `site.css`, bump the number on every page or visitors may keep seeing the old design:
+
+1. In VS Code (or any editor), use Find and Replace across the whole folder.
+2. Find `site.css?v=2`, replace with `site.css?v=3` (next time v=4, and so on).
+3. Commit and push.
+
+You only need this when `site.css` changes. Data updates (the JSON files) don't need it.
+
 ## Monthly update (about 15 minutes)
 
 1. **Electricity rates.** Ask AI to pull the latest EIA Table 5.6.A residential rates
