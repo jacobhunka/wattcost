@@ -6,8 +6,9 @@ JavaScript, no server needed. Every figure comes from a published source.
 ## Files
 
 ```
-index.html                  Charging cost calculator (the home page)
-finder.html                 EV finder: weighted match for first-time buyers
+index.html                  EV finder: weighted match for first-time buyers (the home page)
+charging.html               Charging cost calculator
+finder.html                 Redirect only: sends old /finder.html links to the home page
 carbon.html                 Carbon payback calculator
 how-we-calculate.html       Formulas, sources, and what each estimate leaves out
 about.html                  Who runs the site and how it makes money

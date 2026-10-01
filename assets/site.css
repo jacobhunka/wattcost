@@ -146,69 +146,73 @@ footer.site { border-top: 1px solid var(--line); margin-top: 4rem; background: v
 .foot-inner a { color: var(--soft); text-decoration: none; margin-right: 0.9rem; }
 .foot-inner a:hover { color: var(--ink); text-decoration: underline; }
 
+
 /* ════════════════════════════════════════════════════════════════
-   nexusEVnews theme (added Oct 1, 2026)
-   Same palette and type as nexusevnews.com. Overrides everything above.
+   Light theme with nexusEVnews header (Oct 1, 2026)
+   Light page for readability and trust; dark header and footer and
+   cyan accent tie it to nexusEVnews. Overrides everything above.
    ════════════════════════════════════════════════════════════════ */
 :root {
-  color-scheme: dark;
-  /* nexusEVnews tokens */
-  --bg: #0a0b0f; --surface: #111318; --surface2: #1a1d24;
-  --border: #1f2330; --accent: #00d4ff; --text: #e8eaf0; --muted: #6b7280;
-  /* the old names, remapped so every existing rule picks up the new theme */
-  --paper: var(--bg); --card: var(--surface); --ink: var(--text);
-  --soft: #9aa1ad;            /* a touch lighter than --muted so body copy stays readable */
-  --line: var(--border);
-  --green: var(--accent); --green-dark: #00b2d6; --spark: #f59e0b;
-  --result-bg: var(--surface2); --result-ink: var(--text); --result-soft: #9aa1ad;
-  --warn-bg: rgba(245,158,11,0.09); --warn-line: rgba(245,158,11,0.45);
+  color-scheme: light;
+  --night: #0a0b0f;  --night2: #1a1d24;          /* nexusEVnews header */
+  --accent: #00d4ff;                               /* nexusEVnews cyan: buttons and accents */
+  --link: #00739e;                                 /* darker cyan, readable as text on white */
+  --paper: #f6f5f1; --card: #ffffff; --ink: #15181d; --soft: #555d69; --line: #e2e1da;
+  --green: var(--link); --green-dark: #005a7c; --spark: #f59e0b;
+  --result-bg: #111318; --result-ink: #e8eaf0; --result-soft: #a7aebb;
+  --warn-bg: #fff4d6; --warn-line: #e8c766;
 }
-body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); }
+body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); }
 
-/* type: Bebas Neue for headlines and big numbers, DM Mono for small meta, DM Sans for everything else */
-h1, .article h1 { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-stretch: normal; letter-spacing: 0.02em; line-height: 1.05; font-size: clamp(2.4rem, 6vw, 3.8rem); max-width: 22ch; }
+/* type */
+h1, .article h1 { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-stretch: normal; letter-spacing: 0.02em; line-height: 1.02; font-size: clamp(2.6rem, 6vw, 4rem); max-width: 20ch; }
 .article h2, section.sources h2, .block > h2 { font-family: 'Bebas Neue', sans-serif; font-weight: 400; letter-spacing: 0.03em; font-size: 1.6rem; }
 .big, .match-rank { font-family: 'Bebas Neue', sans-serif; font-weight: 400; letter-spacing: 0.01em; }
 .big { font-size: clamp(3rem, 8vw, 4.8rem); }
 .big small { font-family: 'DM Sans', sans-serif; }
-.match-rank { font-size: 2.1rem; }
-.source-line, .method, .match-src, .src-list .when, .disclosure-bar p {
-  font-family: 'DM Mono', monospace; letter-spacing: 0.02em; }
-.source-line, .method, .match-src { font-size: 0.68rem; }
+.match-rank { font-size: 2.1rem; color: var(--link); }
+.source-line, .method, .match-src, .src-list .when { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.02em; }
+.sub { font-size: 1.08rem; margin-top: 0.6rem; }
+main { max-width: 1100px; }
 
-/* header, matching the nexusEVnews sticky bar */
-header.site { position: sticky; top: 0; z-index: 100; background: rgba(10,11,15,0.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+/* the source line under each tool's headline */
+.data-line { margin-top: 0.9rem; font-size: 0.86rem; color: var(--soft); max-width: 70ch; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+.data-line strong { color: var(--ink); font-weight: 600; }
+.data-line a { color: var(--link); }
+.calc-grid { margin-top: 1.6rem; }
+
+/* dark header, matching nexusEVnews */
+header.site { position: sticky; top: 0; z-index: 100; background: rgba(10,11,15,0.96); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid #1f2330; }
 .site-inner { max-width: 1100px; min-height: 62px; align-items: center; padding: 0.6rem 1.5rem; }
 .brand-wrap { flex-direction: column; align-items: flex-start; gap: 0.15rem; }
-.brand { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 1.85rem; letter-spacing: 0.06em; line-height: 1; color: var(--text); }
+.brand { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 1.85rem; letter-spacing: 0.06em; line-height: 1; color: #e8eaf0; }
 .brand span { color: var(--accent); }
-.tag { font-family: 'DM Mono', monospace; font-size: 0.52rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.tag { font-family: 'DM Mono', monospace; font-size: 0.52rem; letter-spacing: 0.14em; text-transform: uppercase; color: #8b929e; }
 nav.site-nav { gap: 0.2rem; align-items: center; }
-nav.site-nav a { font-size: 0.76rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 0.35rem 0.7rem; border-radius: 4px; border-bottom: none; transition: color 0.2s, background 0.2s; }
-nav.site-nav a:hover { color: var(--text); background: var(--surface2); }
-nav.site-nav a[aria-current="page"] { color: var(--accent); background: rgba(0,212,255,0.08); }
+nav.site-nav a { font-size: 0.76rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #9aa1ad; padding: 0.35rem 0.7rem; border-radius: 4px; border-bottom: none; transition: color 0.2s, background 0.2s; }
+nav.site-nav a:hover { color: #fff; background: var(--night2); }
+nav.site-nav a[aria-current="page"] { color: var(--accent); background: rgba(0,212,255,0.1); }
+header.site a:focus-visible { outline-color: var(--accent); }
 
-/* surfaces and controls */
-.panel, section.sources, .product, .formula, .data-status { background: var(--surface); border-color: var(--border); }
-.result { border: 1px solid rgba(0,212,255,0.22); }
-.compare { border-top-color: var(--border); }
-.field select, .field input { background: #0d0f14; color: var(--text); border-color: var(--border); }
-.field select option { background: var(--surface); color: var(--text); }
-.notice code { background: var(--surface2); }
-.callout, .notice, .todo { color: var(--text); }
-.vehicle-note, .unchecked { color: #f5c56b; }
-.btn, .save, .pick-flag { color: #000; }
-.btn:hover { background: var(--green-dark); }
-.btn-reset { color: var(--text); border-color: var(--border); }
-.btn-reset:hover { border-color: var(--accent); }
-.disclosure-bar p { background: var(--surface); border-color: var(--border); font-size: 0.68rem; line-height: 1.7; }
-.disclosure-bar, main, .foot-inner { max-width: 1100px; }
+/* controls */
+.field select, .field input { background: #fff; color: var(--ink); border-color: #d3d2ca; }
+.btn, .pick-flag { background: var(--accent); color: #000; }
+.btn:hover { background: #00b8de; }
+.save { color: #000; }
+.weight-ctl input[type=range], .field label.check input { accent-color: var(--link); }
+.result a { color: var(--accent); }
+.result { border: none; }
+.compare { border-top-color: #2a2f3b; }
+.vehicle-note { color: #7a5a00; }
+.unchecked { color: #8a6d1f; }
 
-/* footer, matching nexusEVnews */
-footer.site { background: var(--bg); border-top: 1px solid var(--border); }
-.foot-inner { font-family: 'DM Mono', monospace; font-size: 0.64rem; letter-spacing: 0.06em; line-height: 1.8; color: var(--muted); }
+/* dark footer bookends the page, like the header */
+footer.site { background: var(--night); border-top: 1px solid #1f2330; margin-top: 4rem; }
+.foot-inner { max-width: 1100px; font-family: 'DM Mono', monospace; font-size: 0.64rem; letter-spacing: 0.06em; line-height: 1.8; color: #8b929e; }
 .foot-inner a { color: var(--accent); }
 .foot-inner a:hover { color: var(--accent); }
+.foot-note { flex-basis: 100%; }
 
 @media (max-width: 700px) { nav.site-nav a { padding: 0.3rem 0.45rem; font-size: 0.7rem; } }
 @media (prefers-reduced-motion: reduce) { nav.site-nav a { transition: none; } }
+.result-light a, .result-light .match-src a { color: var(--link); }

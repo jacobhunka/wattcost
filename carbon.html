@@ -21,8 +21,8 @@
       <span class="tag">What an EV really costs, in dollars and carbon</span>
     </div>
     <nav class="site-nav" aria-label="Main">
-      <a href="finder.html">Find an EV</a>
-      <a href="index.html">Charging cost</a>
+      <a href="index.html">Find an EV</a>
+      <a href="charging.html">Charging cost</a>
       <a href="carbon.html" aria-current="page">Carbon payback</a>
       <a href="how-we-calculate.html">How we calculate</a>
       <a href="about.html">About</a>
@@ -30,13 +30,11 @@
     </nav>
   </div>
 </header>
-<div class="disclosure-bar">
-  <p><strong>No ads, no affiliate links, no sponsors.</strong> If that ever changes, every paid link will be labeled where it appears. <a href="affiliate-disclosure.html">Our disclosure policy</a></p>
-</div>
 
 <main id="main">
   <h1>When does an EV pay back its manufacturing carbon?</h1>
-  <p class="sub">An EV starts with a bigger carbon footprint because of its battery, then emits less every mile. This calculator estimates the mile where the two lines cross, using EPA grid data, IPCC lifecycle factors, and published battery studies. Every number shows its source. Nothing you enter is saved.</p>
+  <p class="sub">An EV starts with a bigger carbon footprint because of its battery, then emits less every mile. This estimates the mile where the two lines cross. Nothing you enter is saved.</p>
+  <p class="data-line"><strong>Where the numbers come from:</strong> EPA eGRID emissions for your state's power grid, IPCC lifecycle factors, ICCT battery-manufacturing studies, and EPA gasoline factors. Data last updated <span id="dataDate">yearly</span>. <a href="how-we-calculate.html">How we calculate</a></p>
 
   <div class="notice" id="loadError" role="alert">
     <strong>The data files didn't load.</strong> If you opened this file by double-clicking it, that's expected. Run <code>python3 -m http.server --bind 127.0.0.1</code> in the site folder and visit <code>http://127.0.0.1:8000/carbon.html</code>, or view it on the live site.
@@ -130,6 +128,7 @@
   <div class="foot-inner">
     <div><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="affiliate-disclosure.html">Disclosure</a><a href="how-we-calculate.html">How we calculate</a></div>
     <div>&copy; 2026 Volt &amp; Ledger, a <a href="https://nexusevnews.com/" rel="noopener">nexusEVnews</a> project. Estimates only; your utility bill is the final word.</div>
+    <div class="foot-note">No ads, no affiliate links, no sponsors. If that ever changes, every paid link will be labeled where it appears. <a href="affiliate-disclosure.html">Disclosure policy</a></div>
   </div>
 </footer>
 <script>
@@ -318,6 +317,12 @@
   el('chem').addEventListener('change', onBatteryFactor);
   el('origin').addEventListener('change', onBatteryFactor);
   ['battery', 'mpg', 'miles'].forEach(function (id) { el(id).addEventListener('input', calc); });
+})();
+</script>
+
+<script>
+(function(){var el=document.getElementById("dataDate");if(!el)return;
+function fmt(d){var m=["January","February","March","April","May","June","July","August","September","October","November","December"];var p=d.split("-");return p.length===3?m[+p[1]-1]+" "+(+p[2])+", "+p[0]:m[+p[1]-1]+" "+p[0];}fetch("data/carbon.json").then(function(r){return r.json();}).then(function(d){if(d.updated)el.textContent=fmt(d.updated);}).catch(function(){});
 })();
 </script>
 </body>
